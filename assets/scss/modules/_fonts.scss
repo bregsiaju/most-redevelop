@@ -1,0 +1,71 @@
+// OPEN SANS //
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('~assets/fonts/opensans-light-webfont.woff2') format('woff2'),
+        url('~assets/fonts/opensans-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('~assets/fonts/opensans-regular-webfont.woff2') format('woff2'),
+        url('~assets/fonts/opensans-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('~assets/fonts/opensans-bold-webfont.woff2') format('woff2'),
+        url('~assets/fonts/opensans-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('~assets/fonts/opensans-extrabold-webfont.woff2') format('woff2'),
+        url('~assets/fonts/opensans-extrabold-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+// MYRIAD PRO //
+
+@font-face {
+    font-family: 'Myriad Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: url('~assets/fonts/MyriadPro-Light.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('~assets/fonts/MYRIADPRO-REGULAR.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: url('~assets/fonts/MYRIADPRO-SEMIBOLD.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: url('~assets/fonts/MYRIADPRO-BOLD.woff') format('woff');
+    font-display: swap;
+}
