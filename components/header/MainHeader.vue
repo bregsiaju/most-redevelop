@@ -33,7 +33,44 @@
 				</nav>
 			</div>
 		</div>
-		<nav></nav>
+		<div class="main-header">
+			<div class="container flex f-space-between v-center">
+				<Logo />
+				<div class="flex v-center">
+					<ul class="list-nostyle flex">
+						<li>
+							<nuxt-link to="">Produk <i class="bzi-angle-down"></i></nuxt-link>
+						</li>
+						<li>
+							<nuxt-link to=""
+								>Aplikasi <i class="bzi-angle-down"></i
+							></nuxt-link>
+						</li>
+						<li>
+							<nuxt-link to=""
+								>Belajar <i class="bzi-angle-down"></i
+							></nuxt-link>
+						</li>
+						<li>
+							<nuxt-link to=""
+								>Riset & Berita <i class="bzi-angle-down"></i
+							></nuxt-link>
+						</li>
+						<li>
+							<nuxt-link to="">Forum <i class="bzi-angle-down"></i></nuxt-link>
+						</li>
+					</ul>
+					<i class="icon-search"></i>
+					<button class="btn--primary">MULAI INVESTASI</button>
+					<img
+						src="~assets/img/logo-mandiri-sekuritas.png"
+						width="79px"
+						class="ml-20"
+						alt="Logo Mandiri"
+					/>
+				</div>
+			</div>
+		</div>
 	</header>
 </template>
 
@@ -63,6 +100,26 @@ export default {}
 	.lang:hover {
 		cursor: pointer;
 		color: $link_hover;
+	}
+}
+
+.main-header {
+	border-bottom: 1px solid #e6e6e6;
+
+	.container {
+		padding: 15px 0;
+
+		ul > li {
+			padding: 12px 16px;
+
+			i {
+				margin-left: 8px;
+			}
+		}
+
+		.icon-search {
+			padding: 9px 24px 9px 12px;
+		}
 	}
 }
 </style>
