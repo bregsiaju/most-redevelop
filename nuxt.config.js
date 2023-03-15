@@ -33,8 +33,8 @@ export default {
 		title: 'MOST: Aplikasi Investasi Terpercaya',
 		meta: defaultMeta,
 		link: [
-			{ rel: 'apple-touch-icon', href: '/apple-icon.png' },
-			{ rel: 'icon', type: 'image/png', href: '/favicon.png' }
+			{ rel: 'apple-touch-icon', href: '/site-icon.svg' },
+			{ rel: 'icon', type: 'image/svg', href: '/site-icon.svg' }
 		]
 	},
 
