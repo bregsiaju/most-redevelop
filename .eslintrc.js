@@ -17,6 +17,12 @@ module.exports = {
 	plugins: ['prettier'],
 	// add your custom rules here
 	rules: {
-		'vue/no-v-html': 0
+		'vue/no-v-html': 0,
+		'prettier/prettier': [
+			'error',
+			{
+				endOfLine: 'auto'
+			}
+		]
 	}
 }

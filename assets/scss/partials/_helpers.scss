@@ -151,7 +151,7 @@ hr {
 	overflow: hidden;
 }
 
-$gaps: 0, 2, 4, 8, 12, 16, 18, 20, 24, 32, 36, 48, 64;
+$gaps: 0, 2, 4, 8, 10, 12, 16, 18, 20, 24, 32, 36, 48, 64;
 
 @each $gap in $gaps {
 	.mb-#{$gap} {
@@ -188,6 +188,9 @@ $gaps: 0, 2, 4, 8, 12, 16, 18, 20, 24, 32, 36, 48, 64;
 	}
 	.p-#{$gap} {
 		padding: $gap * 1px !important;
+	}
+	.f-gap-#{$gap} {
+		gap: $gap * 1px !important;
 	}
 }
 
