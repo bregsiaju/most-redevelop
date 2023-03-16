@@ -16,7 +16,7 @@
 			<div class="title text-center">
 				Mengapa <strong>MOST</strong> adalah pilihan tepat?
 			</div>
-			<homepageBenefit />
+			<homepageCarouselBenefit />
 		</section>
 		<div class="container"></div>
 	</main>
@@ -57,6 +57,6 @@ export default {
 }
 
 section.benefit {
-	padding: 60px;
+	padding: 60px 0;
 }
 </style>

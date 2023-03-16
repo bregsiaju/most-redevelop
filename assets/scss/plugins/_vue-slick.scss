@@ -17,3 +17,40 @@
 		border-radius: 50%;
 	}
 }
+
+button {
+	&.slick-arrow {
+		&.slick-prev {
+			left: 0;
+			z-index: 2;
+		}
+
+		&.slick-next {
+			right: 12px;
+		}
+
+		&.slick-next:before,
+		&.slick-prev:before {
+			display: inline-block;
+			// color: #767576;
+			color: transparent;
+			opacity: 1.00;
+			font-size: 32px;
+		}
+		
+		&.slick-prev:before {
+			content: '\e901';
+			font-family: 'most-icon';
+		}
+
+		&.slick-next:before {
+			content: '\e902';
+			font-family: 'most-icon';
+		}
+	}
+}
+			
+// .slick-prev:hover::before,
+// .slick-next:hover::before {
+// 	color: $primary !important;
+// }

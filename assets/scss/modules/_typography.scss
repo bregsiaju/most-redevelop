@@ -114,8 +114,6 @@ table {
     text-decoration: line-through;
 }
 
-
-
 .page-title, .page-title2 {
     color: $black50;
     
@@ -157,5 +155,17 @@ $sizes: 14, 16, 18, 20, 22, 24, 30, 36;
         .f-m-#{$size} {
             @include fontSize($size);
         }
+    }
+}
+
+@each $state, $color in $palettes {
+    .font-#{$state} {
+        color: $color;
+    }
+}
+
+@each $state, $color in $light-palettes {
+    .font-#{$state} {
+        color: $color;
     }
 }
