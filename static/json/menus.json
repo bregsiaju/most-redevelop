@@ -1,24 +1,24 @@
 {
-    "data": [
+    "menu": [
         {
-            "title": "About Us",
-            "url": "/about-us"
+            "title": "Produk",
+            "url": "/produk"
         },
         {
-            "title": "News",
-            "url": "/news"
+            "title": "Aplikasi",
+            "url": "/aplikasi"
         },
         {
-            "title": "Products",
-            "url": "/products"
+            "title": "Belajar",
+            "url": "/belajar"
         },
         {
-            "title": "Services",
-            "url": "/services"
+            "title": "Riset & Berita",
+            "url": "/riset-berita"
         },
         {
-            "title": "Contact Us",
-            "url": "/contact-us"
+            "title": "Forum",
+            "url": "/forum"
         }
     ]
 }
