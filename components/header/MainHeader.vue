@@ -1,6 +1,6 @@
 <template>
-	<header>
-		<div class="mini-header">
+	<header class="site-header" :class="{ sticky: isSticky }">
+		<div class="mini-header bg-white">
 			<div class="container flex f-space-between pv-10">
 				<nav>
 					<ul class="list-nostyle">
@@ -33,7 +33,7 @@
 				</nav>
 			</div>
 		</div>
-		<div class="main-header">
+		<div class="main-header bg-white">
 			<div class="container flex f-space-between v-center">
 				<Logo />
 				<div class="flex v-center">
@@ -75,10 +75,39 @@
 </template>
 
 <script>
-export default {}
+export default {
+	data() {
+		return {
+			isSticky: false
+		}
+	},
+	mounted() {
+		window.addEventListener('scroll', this.handleScroll)
+	},
+	beforeDestroy() {
+		window.removeEventListener('scroll', this.handleScroll)
+	},
+	methods: {
+		handleScroll() {
+			this.isSticky = window.pageYOffset > this.$el.offsetTop
+		}
+	}
+}
 </script>
 
 <style lang="scss" scoped>
+.site-header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 3;
+	transition: all 0.5s ease;
+
+	&.sticky {
+		transform: translateY(-46px);
+		box-shadow: 0 0px 7px rgba(0, 0, 0, 0.1);
+	}
+}
 .mini-header {
 	border-bottom: 1px solid #e6e6e6;
 	font-size: 15px;
@@ -107,10 +136,14 @@ export default {}
 	border-bottom: 1px solid #e6e6e6;
 
 	.container {
-		padding: 15px 0;
+		padding: 8px 0;
 
 		ul > li {
 			padding: 12px 16px;
+			text-transform: uppercase;
+			font-family: 'Open Sans';
+			color: #5f5f5f;
+			font-weight: 600;
 
 			i {
 				margin-left: 8px;
@@ -120,6 +153,10 @@ export default {}
 		.icon-search {
 			padding: 9px 24px 9px 12px;
 		}
+	}
+
+	.site-logo {
+		margin-left: -20px;
 	}
 }
 </style>
