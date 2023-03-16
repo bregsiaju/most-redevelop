@@ -1,7 +1,6 @@
 <template>
 	<main class="site-main">
 		<section>
-			<!-- <VueSlickCarousel v-bind="settings"> -->
 			<homepageMainBanner :image="`banner-1.png`">
 				<template #banner-title>
 					<strong>MOST:</strong> Aplikasi investasi terpercaya<br />untuk hidup
@@ -12,17 +11,12 @@
 					terintegrasi.
 				</template>
 			</homepageMainBanner>
-			<!-- <homepageMainBanner :image="`banner-2.png`">
-				<template #banner-title>
-					Saatnya investasi berkelas,<br />saatnya
-					<strong>Mandiri Sekuritas.</strong>
-				</template>
-				<template #banner-decs>
-					Daftar dan unduh aplikasi MOST untuk menikmati<br />berbagai kemudahan
-					dalam berinvestasi.
-				</template>
-			</homepageMainBanner> -->
-			<!-- </VueSlickCarousel> -->
+		</section>
+		<section class="benefit">
+			<div class="title text-center">
+				Mengapa <strong>MOST</strong> adalah pilihan tepat?
+			</div>
+			<homepageBenefit />
 		</section>
 		<div class="container"></div>
 	</main>
@@ -53,5 +47,16 @@ export default {
 <style lang="scss" scoped>
 .site-main {
 	min-height: 1000px;
+}
+
+.title {
+	font-size: 45px;
+	margin-bottom: 25px;
+	line-height: 1.3;
+	color: #3b3b3b;
+}
+
+section.benefit {
+	padding: 60px;
 }
 </style>
