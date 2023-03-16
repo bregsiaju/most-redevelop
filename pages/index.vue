@@ -1,44 +1,57 @@
 <template>
 	<main class="site-main">
-		<div class="container">
-			<h1>Home</h1>
-			<Logo />
-		</div>
+		<section>
+			<!-- <VueSlickCarousel v-bind="settings"> -->
+			<homepageMainBanner :image="`banner-1.png`">
+				<template #banner-title>
+					<strong>MOST:</strong> Aplikasi investasi terpercaya<br />untuk hidup
+					lebih mapan.
+				</template>
+				<template #banner-decs>
+					Jual beli saham, reksa dana, dan obligasi dalam<br />satu platform
+					terintegrasi.
+				</template>
+			</homepageMainBanner>
+			<!-- <homepageMainBanner :image="`banner-2.png`">
+				<template #banner-title>
+					Saatnya investasi berkelas,<br />saatnya
+					<strong>Mandiri Sekuritas.</strong>
+				</template>
+				<template #banner-decs>
+					Daftar dan unduh aplikasi MOST untuk menikmati<br />berbagai kemudahan
+					dalam berinvestasi.
+				</template>
+			</homepageMainBanner> -->
+			<!-- </VueSlickCarousel> -->
+		</section>
+		<div class="container"></div>
 	</main>
 </template>
 
 <script>
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
 export default {
 	data() {
-		return {}
+		return {
+			settings: {
+				arrows: false
+			}
+		}
 	},
 	head() {
 		return {
 			...this.$SEOMeta({
-				metaTitle: 'Suit Baze'
+				metaTitle: 'MOST: Aplikasi Investasi Terpercaya'
 			})
 		}
-	},
-	jsonld() {
-		return this.$jsonLD({
-			type: 'LocalBusiness',
-			jsonLDObjects: {
-				address: {
-					'@type': 'PostalAddress',
-					addressLocality: 'Jakarta, Indonesia',
-					postalCode: '12510',
-					streetAddress: 'Jl. Pejaten Barat II No. 3A'
-				},
-				email: 'contact(at)suitmedia.com',
-				name: 'Suitmedia',
-				telephone: '+62 21 719 6877',
-				legalName: 'PT Suitmedia Kreasi Indonesia',
-				location: 'Jakarta, Bandung, Yogyakarta, Singapore',
-				description: 'Digital Agency Indonesia'
-			}
-		})
 	}
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.site-main {
+	min-height: 1000px;
+}
+</style>
