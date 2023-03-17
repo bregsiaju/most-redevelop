@@ -18,6 +18,9 @@
 			</div>
 			<homepageCarouselBenefit />
 		</section>
+		<section class="product">
+			<homepageProduct />
+		</section>
 		<div class="container"></div>
 	</main>
 </template>
@@ -46,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 .site-main {
-	min-height: 1000px;
+	min-height: 3000px;
 }
 
 .title {

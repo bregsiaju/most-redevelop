@@ -12,11 +12,11 @@
 
 @font-face {
   font-family: 'most-icon';
-  src:  url('~assets/fonts/most-icon.eot?pzvkfq');
-  src:  url('~assets/fonts/most-icon.eot?pzvkfq#iefix') format('embedded-opentype'),
-    url('~assets/fonts/most-icon.ttf?pzvkfq') format('truetype'),
-    url('~assets/fonts/most-icon.woff?pzvkfq') format('woff'),
-    url('~assets/fonts/most-icon.svg?pzvkfq#most-icon') format('svg');
+  src:  url('~assets/fonts/most-icon.eot?3o4olb');
+  src:  url('~assets/fonts/most-icon.eot?3o4olb#iefix') format('embedded-opentype'),
+    url('~assets/fonts/most-icon.ttf?3o4olb') format('truetype'),
+    url('~assets/fonts/most-icon.woff?3o4olb') format('woff'),
+    url('~assets/fonts/most-icon.svg?3o4olb#most-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -240,6 +240,9 @@
 }
 
 
+.icon-transfer:before {
+  content: "\e904";
+}
 .icon-question:before {
   content: "\e903";
 }
