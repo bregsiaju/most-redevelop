@@ -19,6 +19,17 @@
 						</nuxt-link>
 					</div>
 				</div>
+				<ul class="tabs__bar--justify">
+					<li
+						v-for="(tab, i) in tabs"
+						:key="i"
+						class="tabs__nav"
+						:class="{ 'is-active': activeTab === i }"
+						@click="activeTab = i"
+					>
+						{{ tab.title }}
+					</li>
+				</ul>
 			</div>
 			<div class="bzg_c right" data-col="m6">
 				<h2>Top Saham</h2>
@@ -91,7 +102,30 @@
 
 <script>
 export default {
-	name: 'ProductItem'
+	name: 'ProductItem',
+	data() {
+		return {
+			activeTab: 0,
+			tabs: [
+				{
+					title: 'Saham',
+					content: 'Item 1'
+				},
+				{
+					title: 'Reksa Dana',
+					content: 'Item 2'
+				},
+				{
+					title: 'Syariah',
+					content: 'Item 3'
+				},
+				{
+					title: 'Obligasi',
+					content: 'Item 4'
+				}
+			]
+		}
+	}
 }
 </script>
 
@@ -104,6 +138,10 @@ export default {
 
 			&.left {
 				padding-left: 68px;
+				padding-right: 54px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
 			}
 
 			&.right {

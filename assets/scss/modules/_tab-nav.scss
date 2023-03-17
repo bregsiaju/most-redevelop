@@ -35,3 +35,45 @@
     }
   }
 }
+
+
+.tabs__bar,
+.tabs__bar--justify {
+	padding-left: 0;
+	margin-bottom: 0;
+	background: transparent;
+	overflow: auto;
+	white-space: nowrap;
+
+	.tabs__nav {
+		display: inline-block;
+		text-align: center;
+    border-top: 2px solid transparent;
+    font-size: 18px;
+    font-weight: 600;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.is-active {
+		border-top: 2px solid $primary-blue;
+		color: $primary-blue;
+	}
+}
+
+.tabs__bar--justify {
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	flex-direction: row;
+	justify-content: space-around;
+
+	.tabs__nav {
+		-webkit-box-flex: 1;
+		-ms-flex: auto;
+		flex: auto;
+		padding: 5px 20px;
+	}
+}
