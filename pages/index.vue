@@ -1,16 +1,7 @@
 <template>
 	<main class="site-main">
 		<section>
-			<homepageMainBanner :image="`banner-1.png`">
-				<template #banner-title>
-					<strong>MOST:</strong> Aplikasi investasi terpercaya<br />untuk hidup
-					lebih mapan.
-				</template>
-				<template #banner-decs>
-					Jual beli saham, reksa dana, dan obligasi dalam<br />satu platform
-					terintegrasi.
-				</template>
-			</homepageMainBanner>
+			<homepageMainBanner :image="`banner-1.png`" />
 		</section>
 		<section class="benefit">
 			<div class="title text-center">

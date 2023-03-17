@@ -6,10 +6,12 @@
 		<div class="container">
 			<div class="banner-content">
 				<div class="title">
-					<slot name="banner-title"></slot>
+					<strong>MOST:</strong> Aplikasi investasi terpercaya<br />untuk hidup
+					lebih mapan.
 				</div>
 				<div class="desc">
-					<slot name="banner-decs"></slot>
+					Jual beli saham, reksa dana, dan obligasi dalam<br />satu platform
+					terintegrasi.
 				</div>
 				<div class="cta flex f-gap-20 v-center">
 					<nuxt-link to="">
