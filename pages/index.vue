@@ -12,6 +12,12 @@
 		<section class="product">
 			<homepageProduct />
 		</section>
+		<section class="simulation">
+			<div class="title text-center">
+				<strong>Simulasikan Investasi</strong> Anda
+			</div>
+			<homepageSimulation />
+		</section>
 		<div class="container"></div>
 	</main>
 </template>
@@ -46,11 +52,15 @@ export default {
 .title {
 	font-size: 45px;
 	margin-bottom: 25px;
-	line-height: 1.3;
+	line-height: 1;
 	color: #3b3b3b;
 }
 
 section.benefit {
 	padding: 60px 0;
+}
+
+section.simulation {
+	padding: 100px 0;
 }
 </style>
