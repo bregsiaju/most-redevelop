@@ -11,6 +11,18 @@
 					<h4>Lama Investasi</h4>
 					<input-slider :icon="`icon-clock`" />
 				</div>
+				<div class="input-wrapper">
+					<h4>Profil Risiko <i class="icon-question f-14 ml-8"></i></h4>
+					<input-button :model="`risk`" />
+				</div>
+				<div class="input-wrapper">
+					<h4>Modal Awal Investasi</h4>
+					<input-button :model="`capital`" />
+				</div>
+				<div class="input-wrapper">
+					<h4>Investasi Tiap Bulan</h4>
+					<input-button :model="`investment`" />
+				</div>
 			</div>
 			<div class="bzg_c" data-col="m6">
 				<h2>Hasil</h2>
