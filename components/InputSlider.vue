@@ -1,18 +1,18 @@
 <template>
 	<div class="relative">
-		<div class="tooltip">
+		<div class="tooltip" :style="componentPosition">
 			<i class="icon-user"></i>
 			<span>{{ sliderValue }} Tahun</span>
 		</div>
 		<input
 			ref="slider"
 			v-model="sliderValue"
-			min="0"
-			max="100"
+			:min="sliderMin"
+			:max="sliderMax"
 			type="range"
 			class="slider"
+			:style="{ '--value': sliderValue, '--max': sliderMax }"
 		/>
-		{{ sliderRef }}
 	</div>
 </template>
 
@@ -21,17 +21,19 @@ export default {
 	name: 'InputSlider',
 	data() {
 		return {
-			sliderValue: 10
+			sliderValue: 10,
+			sliderMax: 100,
+			sliderMin: 0
+		}
+	},
+	computed: {
+		componentPosition() {
+			const range = this.sliderMax - this.sliderMin
+			const offset = this.sliderValue - this.sliderMin
+			const position = (offset / range) * 100 - 8
+			return `left: ${position}%;`
 		}
 	}
-	// mounted: {
-	// 	componentPosition() {
-	// 		const range = this.$refs.slider.max - this.$refs.slider.min
-	// 		const offset = this.sliderValue - this.$refs.slider.min
-	// 		const percentage = (offset / range) * 100
-	// 		return `left: ${percentage}%;`
-	// 	}
-	// }
 }
 </script>
 
@@ -48,6 +50,7 @@ export default {
 	position: absolute;
 	top: 0px;
 	background: white;
+	white-space: nowrap;
 }
 
 input {
@@ -61,7 +64,7 @@ input {
 	width: 100%;
 	height: 10px;
 	border-radius: 5px;
-	background: #bcbbbb;
+	background: transparent;
 	outline: none;
 	opacity: 1;
 	-webkit-transition: 0.2s;
@@ -90,5 +93,39 @@ input {
 	box-shadow: 0px 3px 6px #00000029;
 	cursor: pointer;
 	position: relative;
+}
+
+.slider::-webkit-slider-runnable-track {
+	background: repeating-linear-gradient(
+			90deg,
+			transparent,
+			transparent 1px,
+			#fff 0,
+			#fff 5px
+		),
+		linear-gradient(
+			to right,
+			$primary 0%,
+			$primary calc((100% * var(--value)) / var(--max)),
+			#bcbbbb calc((100% * var(--value)) / var(--max)),
+			#bcbbbb 100%
+		);
+}
+
+.slider::-moz-range-track {
+	background: repeating-linear-gradient(
+			90deg,
+			transparent,
+			transparent 1px,
+			#fff 0,
+			#fff 5px
+		),
+		linear-gradient(
+			to right,
+			$primary 0%,
+			$primary calc((100% * var(--value)) / var(--max)),
+			#bcbbbb calc((100% * var(--value)) / var(--max)),
+			#bcbbbb 100%
+		);
 }
 </style>
