@@ -1,7 +1,7 @@
 <template>
 	<div class="relative">
 		<div class="tooltip" :style="componentPosition">
-			<i class="icon-user"></i>
+			<i :class="icon"></i>
 			<span>{{ sliderValue }} Tahun</span>
 		</div>
 		<input
@@ -19,18 +19,34 @@
 <script>
 export default {
 	name: 'InputSlider',
+	props: {
+		value: {
+			type: Number,
+			default: 10
+		},
+		sliderMin: {
+			type: Number,
+			default: 0
+		},
+		sliderMax: {
+			type: Number,
+			default: 100
+		},
+		icon: {
+			type: String,
+			default: 'icon-user'
+		}
+	},
 	data() {
 		return {
-			sliderValue: 10,
-			sliderMax: 100,
-			sliderMin: 0
+			sliderValue: this.value
 		}
 	},
 	computed: {
 		componentPosition() {
 			const range = this.sliderMax - this.sliderMin
-			const offset = this.sliderValue - this.sliderMin
-			const position = (offset / range) * 100 - 8
+			const offset = this.sliderValue - this.sliderMin - 8
+			const position = (offset / range) * 100
 			return `left: ${position}%;`
 		}
 	}
@@ -48,7 +64,7 @@ export default {
 	width: fit-content;
 	padding: 3px 10px;
 	position: absolute;
-	top: 0px;
+	top: -5px;
 	background: white;
 	white-space: nowrap;
 }

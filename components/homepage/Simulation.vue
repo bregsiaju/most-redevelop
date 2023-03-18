@@ -3,9 +3,13 @@
 		<div class="bzg">
 			<div class="bzg_c input-data" data-col="m6">
 				<h2>Profil Anda</h2>
-				<div class="age">
+				<div class="input-wrapper">
 					<h4>Usia Anda</h4>
-					<input-slider />
+					<input-slider :value="24" />
+				</div>
+				<div class="input-wrapper">
+					<h4>Lama Investasi</h4>
+					<input-slider :icon="`icon-clock`" />
 				</div>
 			</div>
 			<div class="bzg_c" data-col="m6">
@@ -52,6 +56,10 @@ h4 {
 	color: #000;
 	font-weight: 600;
 	font-size: 20px;
+	margin-bottom: 25px;
+}
+
+.input-wrapper {
 	margin-bottom: 25px;
 }
 </style>
