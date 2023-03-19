@@ -27,6 +27,7 @@
 			<div class="bzg_c" data-col="m6">
 				<h2>Hasil</h2>
 				<h4>Rekomendasi dan Perkiraan Investasi</h4>
+				<homepageChart />
 			</div>
 		</div>
 	</div>

@@ -54,7 +54,8 @@ export default {
 		{ src: './plugins/vue-slick-carousel.js' },
 		{ src: '~/plugins/helpers.js' },
 		{ src: '~/plugins/vuelidate' },
-		{ src: '~/plugins/jsonld' }
+		{ src: '~/plugins/jsonld' },
+		{ src: '~/plugins/vue-chartjs.js', mode: 'client' }
 	],
 
 	// Auto import components (https://go.nuxtjs.dev/config-components)
