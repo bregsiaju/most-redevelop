@@ -13,15 +13,15 @@
 				</div>
 				<div class="input-wrapper">
 					<h4>Profil Risiko <i class="icon-question f-14 ml-8"></i></h4>
-					<input-button :model="`risk`" />
+					<input-button :name="`risk`" :options="riskOption" />
 				</div>
 				<div class="input-wrapper">
 					<h4>Modal Awal Investasi</h4>
-					<input-button :model="`capital`" />
+					<input-button :name="`capital`" :options="capitalOption" />
 				</div>
 				<div class="input-wrapper">
 					<h4>Investasi Tiap Bulan</h4>
-					<input-button :model="`investment`" />
+					<input-button :name="`invest`" :options="investOption" />
 				</div>
 			</div>
 			<div class="bzg_c" data-col="m6">
@@ -34,7 +34,33 @@
 
 <script>
 export default {
-	name: 'Simulation'
+	name: 'Simulation',
+	data() {
+		return {
+			riskOption: [
+				{ label: 'Sangat Konservative', value: 'Sangat Konservative' },
+				{ label: 'Konservative', value: 'Konservative' },
+				{ label: 'Moderat', value: 'Moderat' },
+				{ label: 'Agresif', value: 'Agresif' }
+			],
+			riskSelected: 'Sangat Konservative',
+			capitalOption: [
+				{ label: 'Rp1.000.000', value: 1000000 },
+				{ label: 'Rp5.000.000', value: 5000000 },
+				{ label: 'Rp10.000.000', value: 10000000 },
+				{ label: 'Rp', value: 'other' }
+			],
+			capitalSelected: null,
+
+			investOption: [
+				{ label: 'Rp500.000', value: 500000 },
+				{ label: 'Rp1.000.000', value: 1000000 },
+				{ label: 'Rp2.000.000', value: 2000000 },
+				{ label: 'Rp', value: 'other' }
+			],
+			investSelected: null
+		}
+	}
 }
 </script>
 

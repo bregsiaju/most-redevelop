@@ -1,65 +1,33 @@
 <template>
 	<div class="button-wrapper">
 		<div class="bzg">
-			<div class="bzg_c" data-col="m3">
+			<div v-for="(option, i) in options" :key="i" class="bzg_c" data-col="m3">
 				<input
-					id="button-radio"
+					v-if="option.value != 'other'"
+					:id="option.value + name"
 					v-model="selectedOption"
 					type="radio"
-					name="my-radio"
-					value="option1"
+					:name="name"
+					:value="option.value"
 				/>
 				<label
-					for="button-radio"
+					v-if="option.value != 'other'"
+					:for="option.value + name"
 					class="btn--outline"
-					:class="{ 'button-selected': selectedOption === 'option1' }"
-					>Sangat Konservative</label
+					:class="{
+						'button-selected': selectedOption === option.value
+					}"
+					>{{ option.label }}</label
 				>
-			</div>
-			<div class="bzg_c" data-col="m3">
 				<input
-					id="button-radio-2"
-					v-model="selectedOption"
-					type="radio"
-					name="my-radio"
-					value="option2"
-				/>
-				<label
-					for="button-radio-2"
+					v-if="option.value == 'other'"
+					v-model="otherValue"
+					type="number"
+					min="0"
+					:name="name"
 					class="btn--outline"
-					:class="{ 'button-selected': selectedOption === 'option2' }"
-					>Konservative</label
-				>
-			</div>
-			<div class="bzg_c" data-col="m3">
-				<input
-					id="button-radio-3"
-					v-model="selectedOption"
-					type="radio"
-					name="my-radio"
-					value="option3"
+					placeholder="RpJumlah"
 				/>
-				<label
-					for="button-radio-3"
-					class="btn--outline"
-					:class="{ 'button-selected': selectedOption === 'option3' }"
-					>Moderat</label
-				>
-			</div>
-			<div class="bzg_c" data-col="m3">
-				<input
-					id="button-radio-4"
-					v-model="selectedOption"
-					type="radio"
-					name="my-radio"
-					value="option4"
-				/>
-				<label
-					for="button-radio-4"
-					class="btn--outline"
-					:class="{ 'button-selected': selectedOption === 'option4' }"
-					>Agresif</label
-				>
 			</div>
 		</div>
 	</div>
@@ -69,21 +37,19 @@
 export default {
 	name: 'InputButton',
 	props: {
-		model: {
+		options: {
+			type: Array,
+			required: true
+		},
+		name: {
 			type: String,
-			default: 'option1'
+			required: true
 		}
 	},
 	data() {
 		return {
-			selectedOption: this.model
-		}
-	},
-	computed: {
-		buttonClass() {
-			return {
-				'button-selected': this.selectedOption === 'option1'
-			}
+			selectedOption: this.options,
+			otherValue: ''
 		}
 	}
 }
