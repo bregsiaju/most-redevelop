@@ -1,7 +1,7 @@
 <template>
-	<div class="container pt-56">
+	<div class="container">
 		<div class="bzg">
-			<div class="bzg_c input-data" data-col="m6">
+			<div class="bzg_c input-data pt-32" data-col="m6">
 				<h2>Profil Anda</h2>
 				<div class="input-wrapper">
 					<h4>Usia Anda</h4>
@@ -24,10 +24,51 @@
 					<input-button :name="`invest`" :options="investOption" />
 				</div>
 			</div>
-			<div class="bzg_c" data-col="m6">
-				<h2>Hasil</h2>
-				<h4>Rekomendasi dan Perkiraan Investasi</h4>
-				<homepageChart />
+			<div class="bzg_c pl-0" data-col="m6">
+				<div class="result-wrapper">
+					<div class="flex f-space-between v-center mb-40">
+						<h2 class="mb-0">Hasil</h2>
+						<div>
+							<span><i class="icon-user"></i> Usia: <strong>30</strong></span>
+							<span
+								><i class="icon-clock"></i> Lama Investasi:
+								<strong>10</strong></span
+							>
+						</div>
+					</div>
+					<h4>Rekomendasi dan Perkiraan Investasi</h4>
+					<homepageChart />
+					<div class="compare">
+						<div class="bzg bzg--no-gutter">
+							<div class="bzg_c text-bold text-primary-blue" data-col="m6">
+								<p>Reksa Dana Pendapatan Tetap</p>
+								<p>Rp. 246.735.612</p>
+							</div>
+							<div class="bzg_c text-center" data-col="m1">
+								<p class="text-grey">VS</p>
+								<p>&nbsp;</p>
+							</div>
+							<div class="bzg_c text-grey" data-col="m5">
+								<p>Deposito</p>
+								<p>Rp. 228.907.362</p>
+							</div>
+						</div>
+					</div>
+					<button class="btn--primary mt-32">Lihat Produk</button>
+				</div>
+				<div class="notes mt-32">
+					<p>
+						<span class="text-red">*</span>PT Mandiri Sekuritas tidak
+						bertanggung jawab atas tingkat keakuratan hasil simulasi. Segala
+						risiko akibat penggunaan hasil simulasi adalah sepenuhnya tanggung
+						jawab (calon) investor.
+					</p>
+					<p>
+						<span class="text-red">*</span>Tingkat indikasi hasil investasi
+						dibuat berdasarkan rata-rata kinerja produk investasi di masa lalu
+						dan bukan jaminan hasil investasi yang akan Anda peroleh.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -66,6 +107,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+	padding-top: 45px;
+}
+
 .bzg_c.input-data {
 	padding-right: 56px;
 }
@@ -100,5 +145,37 @@ h4 {
 
 .input-wrapper {
 	margin-bottom: 25px;
+}
+
+.result-wrapper {
+	box-shadow: 0px 7px 30px #0000000b;
+	padding: 32px;
+}
+
+.compare {
+	margin-top: 28px;
+	padding: 20px 24px;
+	background-color: #f7f7f7;
+	border-radius: 3px;
+
+	.bzg_c > p:first-child {
+		font-size: 18px;
+	}
+
+	.bzg_c > p:last-of-type {
+		margin-bottom: 0;
+		font-size: 20px;
+	}
+}
+
+.notes {
+	color: #bcbcbc;
+	text-align: justify;
+	font-size: 14px;
+	padding-right: 24px;
+
+	p {
+		margin-bottom: 0;
+	}
 }
 </style>
