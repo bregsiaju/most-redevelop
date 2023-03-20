@@ -18,6 +18,14 @@
 			</div>
 			<homepageSimulation />
 		</section>
+		<section class="call-to-action">
+			<div class="container">
+				<div class="title">
+					<p>Bergabung Bersama <strong>MOST</strong><br />Sekarang</p>
+				</div>
+				<homepageCarouselCTA />
+			</div>
+		</section>
 		<div class="container"></div>
 	</main>
 </template>
@@ -61,6 +69,22 @@ section.benefit {
 }
 
 section.simulation {
-	padding: 100px 0;
+	padding: 100px 0 36px;
+}
+
+section.call-to-action {
+	padding-top: 120px;
+	padding-bottom: 90px;
+	background: url('~static/assets/img/homepage/bg-cta.png');
+	background-repeat: no-repeat;
+
+	.title {
+		display: flex;
+		justify-content: flex-end;
+
+		p {
+			line-height: 1.4;
+		}
+	}
 }
 </style>

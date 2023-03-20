@@ -29,7 +29,9 @@
 					<div class="flex f-space-between v-center mb-40">
 						<h2 class="mb-0">Hasil</h2>
 						<div>
-							<span><i class="icon-user"></i> Usia: <strong>30</strong></span>
+							<span class="mr-20">
+								<i class="icon-user"></i> Usia: <strong>30</strong>
+							</span>
 							<span
 								><i class="icon-clock"></i> Lama Investasi:
 								<strong>10</strong></span
