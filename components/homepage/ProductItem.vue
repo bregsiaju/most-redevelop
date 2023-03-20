@@ -1,15 +1,22 @@
 <template>
 	<div class="product-item relative">
-		<img src="~static/assets/img/homepage/product-1.png" class="bg-left" />
+		<img
+			v-for="tab in tabs"
+			v-show="activeTab === tab.id"
+			:key="tab.id"
+			:src="`assets/img/homepage/${tab.content.image}`"
+			class="bg-left"
+		/>
 		<div class="bzg">
 			<div class="bzg_c left" data-col="m6">
-				<div class="text-content">
-					<p class="mb-24">Nikmati mudahnya<br />investasi saham di MOST.</p>
-					<p class="mb-24">
-						Investasi saham jadi aman dan nyaman berkat biaya jual beli yang
-						terjangkau, fasilitas pinjaman, serta banyaknya pilihan media
-						transaksi.
-					</p>
+				<div
+					v-for="tab in tabs"
+					v-show="activeTab === tab.id"
+					:key="tab.id"
+					class="text-content"
+				>
+					<p class="mb-24" v-html="tab.content.heading"></p>
+					<p class="mb-24" v-text="tab.content.description"></p>
 					<div>
 						<nuxt-link to="">
 							<button class="btn--primary mr-20">SELENGKAPNYA</button>
@@ -21,18 +28,24 @@
 				</div>
 				<ul class="tabs__bar--justify">
 					<li
-						v-for="(tab, i) in tabs"
-						:key="i"
+						v-for="tab in tabs"
+						:key="tab.id"
 						class="tabs__nav"
-						:class="{ 'is-active': activeTab === i }"
-						@click="activeTab = i"
+						:class="{ 'is-active': activeTab === tab.id }"
+						@click="activeTab = tab.id"
 					>
 						{{ tab.title }}
 					</li>
 				</ul>
 			</div>
-			<div class="bzg_c right" data-col="m6">
-				<h2>Top Saham</h2>
+			<div
+				v-for="tab in tabs"
+				v-show="activeTab === tab.id"
+				:key="tab.id"
+				class="bzg_c right"
+				data-col="m6"
+			>
+				<h2>{{ tab.content.topTitle }}</h2>
 				<li>Filters</li>
 				<div class="bzg dropdown">
 					<p class="bzg_c flex v-center f-space-between" data-col="m6">
@@ -103,27 +116,19 @@
 <script>
 export default {
 	name: 'ProductItem',
+	props: {
+		tabs: {
+			type: Array,
+			required: true
+		},
+		selectedTab: {
+			type: Number,
+			default: 1
+		}
+	},
 	data() {
 		return {
-			activeTab: 0,
-			tabs: [
-				{
-					title: 'Saham',
-					content: 'Item 1'
-				},
-				{
-					title: 'Reksa Dana',
-					content: 'Item 2'
-				},
-				{
-					title: 'Syariah',
-					content: 'Item 3'
-				},
-				{
-					title: 'Obligasi',
-					content: 'Item 4'
-				}
-			]
+			activeTab: this.selectedTab
 		}
 	}
 }
