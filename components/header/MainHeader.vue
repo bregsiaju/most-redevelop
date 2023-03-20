@@ -61,7 +61,9 @@
 						</li>
 					</ul>
 					<i class="icon-search"></i>
-					<button class="btn--primary">MULAI INVESTASI</button>
+					<nuxt-link to="/login">
+						<button class="btn--primary">MULAI INVESTASI</button>
+					</nuxt-link>
 					<img
 						src="~assets/img/logo-mandiri-sekuritas.png"
 						width="79px"

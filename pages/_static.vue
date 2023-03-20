@@ -4,11 +4,11 @@
 
 <script>
 export default {
-	jsonld(){
+	jsonld() {
 		return this.$jsonLD({
 			jsonLDObjects: {
-				"name": "Static",
-				"description": "Static list page",
+				name: 'Static',
+				description: 'Static list page'
 			}
 		})
 	}
