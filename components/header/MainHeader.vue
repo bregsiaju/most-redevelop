@@ -36,7 +36,7 @@
 		<div class="main-header bg-white">
 			<div class="container flex f-space-between v-center">
 				<Logo />
-				<div class="flex v-center">
+				<div class="nav-collapse flex v-center">
 					<ul class="list-nostyle flex">
 						<li>
 							<nuxt-link to="">Produk <i class="bzi-angle-down"></i></nuxt-link>
@@ -60,7 +60,9 @@
 							<nuxt-link to="">Forum <i class="bzi-angle-down"></i></nuxt-link>
 						</li>
 					</ul>
-					<i class="icon-search"></i>
+					<div class="search relative">
+						<i class="icon-search" @click="searchOn = true"></i>
+					</div>
 					<nuxt-link to="/login">
 						<button class="btn--primary">MULAI INVESTASI</button>
 					</nuxt-link>
@@ -80,7 +82,8 @@
 export default {
 	data() {
 		return {
-			isSticky: false
+			isSticky: false,
+			searchOn: false
 		}
 	},
 	mounted() {
@@ -159,6 +162,13 @@ export default {
 
 	.site-logo {
 		margin-left: -20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.nav-collapse,
+	.mini-header {
+		display: none;
 	}
 }
 </style>
