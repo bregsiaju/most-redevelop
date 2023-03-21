@@ -4,7 +4,7 @@
 			<homepageMainBanner :image="`banner-1.png`" />
 		</section>
 		<section class="benefit">
-			<div class="title text-center">
+			<div class="container title text-center">
 				Mengapa <strong>MOST</strong> adalah pilihan tepat?
 			</div>
 			<homepageCarouselBenefit />
@@ -13,14 +13,14 @@
 			<homepageProduct />
 		</section>
 		<section class="simulation">
-			<div class="title text-center">
+			<div class="container title text-center">
 				<strong>Simulasikan Investasi</strong> Anda
 			</div>
 			<homepageSimulation />
 		</section>
 		<section class="call-to-action">
 			<div class="container">
-				<div class="title">
+				<div class="container title">
 					<p>Bergabung Bersama <strong>MOST</strong><br />Sekarang</p>
 				</div>
 				<homepageCarouselCTA />
@@ -85,6 +85,12 @@ section.call-to-action {
 		p {
 			line-height: 1.4;
 		}
+	}
+}
+
+@media (max-width: 770px) {
+	.title {
+		font-size: 30px;
 	}
 }
 </style>

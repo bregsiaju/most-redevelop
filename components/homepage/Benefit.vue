@@ -68,6 +68,7 @@ export default {
 .benefit-img {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 
 	img {
 		height: 500px;
@@ -87,5 +88,23 @@ export default {
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+.bzg {
+	margin-left: 0;
+
+	.bzg_c {
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 770px) {
+	.benefit-img {
+		padding-top: 50px;
+
+		img {
+			height: 300px;
+		}
+	}
 }
 </style>

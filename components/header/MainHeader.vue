@@ -113,7 +113,7 @@ export default {
 			this.isSticky = window.pageYOffset > this.$el.offsetTop
 		},
 		handleResize() {
-			window.innerWidth <= 770
+			return window.innerWidth <= 770
 				? (this.isCollapse = true)
 				: (this.isCollapse = false)
 		}
@@ -191,7 +191,7 @@ export default {
 	}
 }
 
-@media (max-width: 770px) {
+@media (max-width: 780px) {
 	.nav-collapse,
 	.mini-header {
 		display: none;
