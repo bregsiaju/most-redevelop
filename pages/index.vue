@@ -21,12 +21,11 @@
 		<section class="call-to-action">
 			<div class="container">
 				<div class="container title">
-					<p>Bergabung Bersama <strong>MOST</strong><br />Sekarang</p>
+					<p>Bergabung Bersama <strong>MOST</strong> Sekarang</p>
 				</div>
 				<homepageCarouselCTA />
 			</div>
 		</section>
-		<div class="container"></div>
 	</main>
 </template>
 
@@ -84,6 +83,10 @@ section.call-to-action {
 
 		p {
 			line-height: 1.4;
+
+			@media #{$large} {
+				max-width: 510px;
+			}
 		}
 	}
 }
@@ -91,6 +94,12 @@ section.call-to-action {
 @media (max-width: 770px) {
 	.title {
 		font-size: 30px;
+	}
+}
+
+@media (max-width: 770px) {
+	section.call-to-action {
+		background-size: 30%;
 	}
 }
 </style>

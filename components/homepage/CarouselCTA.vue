@@ -15,7 +15,7 @@
 				<p><span class="text-primary-blue">Bebas</span> Biaya Training</p>
 			</div>
 		</VueSlickCarousel>
-		<div class="flex v-center f-space-between">
+		<div class="nav-wrapper flex v-center f-space-between">
 			<div class="navigation">
 				<i class="icon-long-arrow-left mr-8"></i>
 				<i class="icon-long-arrow-right"></i>
@@ -67,6 +67,20 @@ export default {
 			color: $primary !important;
 			cursor: pointer;
 		}
+	}
+}
+
+@media (max-width: 576px) {
+	.nav-wrapper {
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-top: 36px;
+	}
+}
+
+@media (max-width: 770px) {
+	.text-benefit p {
+		font-size: 36px;
 	}
 }
 </style>

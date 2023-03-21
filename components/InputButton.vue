@@ -1,7 +1,12 @@
 <template>
 	<div class="button-wrapper">
 		<div class="bzg">
-			<div v-for="(option, i) in options" :key="i" class="bzg_c" data-col="m3">
+			<div
+				v-for="(option, i) in options"
+				:key="i"
+				class="bzg_c"
+				data-col="s3, m3"
+			>
 				<input
 					v-if="option.value != 'other'"
 					:id="option.value + name"
@@ -62,6 +67,12 @@ export default {
 	font-weight: 400;
 	padding: 15px 0;
 	border-color: #bcbcbc;
+	height: 100%;
+	white-space: pre-wrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
 
 	&:hover,
 	&:focus {
@@ -70,6 +81,9 @@ export default {
 		color: #000;
 		text-shadow: none;
 	}
+	// @media (max-width: 576px) {
+
+	// }
 }
 
 .bzg {
