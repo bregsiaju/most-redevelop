@@ -52,10 +52,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.site-main {
-	min-height: 3000px;
-}
-
 .title {
 	font-size: 45px;
 	margin-bottom: 25px;
@@ -99,7 +95,13 @@ section.call-to-action {
 
 @media (max-width: 770px) {
 	section.call-to-action {
+		padding-top: 40px;
 		background-size: 30%;
+		background-position: left bottom;
+
+		.title p {
+			margin-bottom: 0;
+		}
 	}
 }
 </style>
