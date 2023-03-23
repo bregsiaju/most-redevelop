@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="bzg">
-			<div class="bzg_c input-data pt-32" data-col="m6">
+			<div class="bzg_c input-data pt-32" data-col="l6, m12">
 				<h2>Profil Anda</h2>
 				<div class="input-wrapper">
 					<h4>Usia Anda</h4>
@@ -24,7 +24,7 @@
 					<input-button :name="`invest`" :options="investOption" />
 				</div>
 			</div>
-			<div class="bzg_c pl-0" data-col="m6">
+			<div class="bzg_c pl-0" data-col="l6, m12">
 				<div class="result-wrapper">
 					<div class="flex f-space-between v-center mb-40">
 						<h2 class="mb-0">Hasil</h2>
@@ -42,15 +42,15 @@
 					<homepageChart />
 					<div class="compare">
 						<div class="bzg bzg--no-gutter">
-							<div class="bzg_c text-bold text-primary-blue" data-col="m6">
+							<div class="bzg_c text-bold text-primary-blue" data-col="m6, s5">
 								<p>Reksa Dana Pendapatan Tetap</p>
 								<p>Rp. 246.735.612</p>
 							</div>
-							<div class="bzg_c text-center" data-col="m1">
+							<div class="bzg_c text-center" data-col="m1, s2">
 								<p class="text-grey">VS</p>
 								<p>&nbsp;</p>
 							</div>
-							<div class="bzg_c text-grey" data-col="m5">
+							<div class="bzg_c text-grey" data-col="m5, s5">
 								<p>Deposito</p>
 								<p>Rp. 228.907.362</p>
 							</div>
@@ -178,6 +178,24 @@ h4 {
 
 	p {
 		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 770px) {
+	.container {
+		padding-top: 0;
+	}
+
+	.bzg_c.input-data {
+		padding-right: 0;
+	}
+
+	.result-wrapper {
+		margin-left: 20px;
+	}
+
+	.notes {
+		margin-left: 24px;
 	}
 }
 </style>

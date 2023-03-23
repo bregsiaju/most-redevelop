@@ -2,6 +2,7 @@
 	<main class="site-main">
 		<div class="container">
 			<p class="title">Disclaimer</p>
+			<!-- wrapper v-html / kontennya sama kayak page kebijakan privasi -->
 			<div class="note">
 				<i
 					>Situs web ini dimiliki oleh PT Mandiri Sekuritas. Situs web ini

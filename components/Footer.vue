@@ -1,9 +1,9 @@
 <template>
 	<footer class="site-footer">
 		<div class="footer-top f-14">
-			<div class="container flex v-center f-space-between">
+			<div class="container flex v-center text-center f-space-between">
 				<nav>
-					<ul class="list-nostyle flex v-center f-gap-16">
+					<ul class="list-nostyle flex v-center f-gap-16 f-space-between">
 						<li>
 							<nuxt-link to="/bantuan">Bantuan</nuxt-link>
 						</li>
@@ -123,6 +123,44 @@ export default {
 		display: flex;
 		justify-content: flex-end;
 		gap: 24px;
+	}
+}
+
+@media (max-width: 480px) {
+	.footer-top {
+		.container {
+			flex-wrap: wrap;
+
+			nav {
+				flex-grow: 1;
+			}
+		}
+	}
+
+	.footer-bottom {
+		.bzg_c:nth-of-type(1) {
+			order: 3;
+			text-align: center;
+		}
+		.bzg_c:nth-of-type(2) {
+			order: 1;
+		}
+		.bzg_c:nth-of-type(3) {
+			order: 2;
+		}
+
+		.sosmed-icon {
+			justify-content: center;
+			padding: 12px 0;
+		}
+	}
+}
+
+@media (max-width: 770px) {
+	.footer-top {
+		p {
+			margin-top: 20px;
+		}
 	}
 }
 </style>

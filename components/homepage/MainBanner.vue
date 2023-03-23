@@ -13,7 +13,7 @@
 					Jual beli saham, reksa dana, dan obligasi dalam<br />satu platform
 					terintegrasi.
 				</div>
-				<div class="cta flex f-gap-20 v-center">
+				<div class="cta flex f-gap-20 v-center flex--wrap">
 					<nuxt-link to="">
 						<button class="btn--primary">DAFTAR SEKARANG</button>
 					</nuxt-link>
@@ -81,6 +81,25 @@ export default {
 			border: 2px solid rgba(112, 112, 112, 0.3);
 			padding: 8px;
 			margin-right: 8px;
+		}
+	}
+}
+
+@media (max-width: 770px) {
+	.main-banner {
+		padding: 24px 0 75px;
+		height: auto;
+
+		.banner-content {
+			width: 100%;
+
+			.title {
+				font-size: 36px;
+			}
+
+			.desc {
+				width: 80%;
+			}
 		}
 	}
 }

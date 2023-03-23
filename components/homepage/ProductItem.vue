@@ -8,7 +8,7 @@
 			class="bg-left"
 		/>
 		<div class="bzg">
-			<div class="bzg_c left" data-col="m6">
+			<div class="bzg_c left" data-col="l6, m12">
 				<div
 					v-for="tab in tabs"
 					v-show="activeTab === tab.id"
@@ -43,16 +43,16 @@
 				v-show="activeTab === tab.id"
 				:key="tab.id"
 				class="bzg_c right"
-				data-col="m6"
+				data-col="l6, m12"
 			>
 				<h2>{{ tab.content.topTitle }}</h2>
 				<li>Filters</li>
 				<div class="bzg dropdown">
-					<p class="bzg_c flex v-center f-space-between" data-col="m6">
+					<p class="bzg_c flex v-center f-space-between" data-col="m6, s6">
 						<span>Most Active</span>
 						<span>+</span>
 					</p>
-					<p class="bzg_c flex v-center f-space-between" data-col="m6">
+					<p class="bzg_c flex v-center f-space-between" data-col="m6, s6">
 						<span>Pada Tanggal Ini</span>
 						<span>+</span>
 					</p>
@@ -69,7 +69,7 @@
 					</p>
 				</div>
 				<div class="bzg stock">
-					<div v-for="item in 5" :key="item" class="bzg_c" data-col="m4">
+					<div v-for="item in 5" :key="item" class="bzg_c" data-col="m4, s6">
 						<div class="stock-card">
 							<p class="text-semibold text-dark-grey mb-4">BBRI</p>
 							<div class="bzg bzg--no-gutter">
@@ -137,22 +137,34 @@ export default {
 <style lang="scss" scoped>
 .product-item {
 	& > .bzg {
+		margin-left: 0;
+
 		& > .bzg_c {
 			padding-top: 54px;
 			padding-bottom: 54px;
 
 			&.left {
-				padding-left: 68px;
+				padding-left: 43px;
 				padding-right: 54px;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
+
+				@media (max-width: 576px) {
+					padding-left: 16px;
+					padding-right: 16px;
+				}
 			}
 
 			&.right {
 				background-color: #f2f2f2;
 				padding-left: 32px;
 				padding-right: 48px;
+
+				@media (max-width: 576px) {
+					padding-left: 16px;
+					padding-right: 16px;
+				}
 
 				h2 {
 					font-weight: 600;
@@ -176,8 +188,13 @@ export default {
 		top: 0;
 		left: 0;
 		z-index: -1;
-		width: 49.5%;
+		width: 50%;
 		height: 100%;
+
+		@media (max-width: 769px) {
+			width: 100%;
+			height: 50%;
+		}
 	}
 }
 
@@ -220,8 +237,18 @@ export default {
 
 .stock {
 	margin-left: -25px !important;
+
 	& > .bzg_c {
 		margin-top: 20px !important;
+	}
+
+	@media (max-width: 576px) {
+		margin-left: -16px !important;
+
+		& > .bzg_c {
+			margin-top: 16px !important;
+			padding-left: 16px;
+		}
 	}
 }
 
@@ -236,5 +263,16 @@ export default {
 
 .text-volume {
 	color: #696969;
+}
+
+@media (max-width: 770px) {
+	.tabs__bar--justify {
+		margin-top: 48px;
+
+		.tabs__nav {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 }
 </style>
