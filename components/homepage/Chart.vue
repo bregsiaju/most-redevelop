@@ -1,15 +1,17 @@
 <template>
-	<LineChart
-		:chart-options="chartOptions"
-		:chart-data="chartData"
-		:chart-id="chartId"
-		:dataset-id-key="datasetIdKey"
-		:plugins="plugins"
-		:css-classes="cssClasses"
-		:styles="styles"
-		:width="width"
-		:height="height"
-	/>
+	<client-only>
+		<LineChart
+			:chart-options="chartOptions"
+			:chart-data="chartData"
+			:chart-id="chartId"
+			:dataset-id-key="datasetIdKey"
+			:plugins="plugins"
+			:css-classes="cssClasses"
+			:styles="styles"
+			:width="width"
+			:height="height"
+		/>
+	</client-only>
 </template>
 
 <script>

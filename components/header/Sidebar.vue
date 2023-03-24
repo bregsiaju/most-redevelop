@@ -13,7 +13,7 @@
 					>
 						<ul class="list-nostyle">
 							<li class="submenu">
-								<nuxt-link :to="list.url">
+								<nuxt-link :to="list.url" @click="closeSidebar">
 									<p class="mb-0 pl-16">{{ list.title }}</p>
 								</nuxt-link>
 							</li>
@@ -49,6 +49,11 @@ export default {
 	name: 'Sidebar',
 	computed: {
 		...mapState(['menus'])
+	},
+	methods: {
+		closeSidebar() {
+			this.$store.commit('sidebar/toggleClose')
+		}
 	}
 }
 </script>

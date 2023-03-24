@@ -122,7 +122,7 @@ export default {
 	},
 
 	router: {
-		middleware: ['redirection']
+		middleware: ['redirection', 'autoCloseSidebar']
 	},
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -166,5 +166,9 @@ export default {
 					? '[path][name].[ext]'
 					: `videos/[name].[contenthash:7]v${version}.[ext]`
 		}
+	},
+	server: {
+		port: 3000,
+		host: '0.0.0.0'
 	}
 }

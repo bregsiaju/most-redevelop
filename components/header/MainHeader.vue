@@ -77,13 +77,15 @@
 					<div class="search relative">
 						<i class="icon-search" @click="searchOn = true"></i>
 					</div>
-					<div class="menu" @click="showSidebar = !showSidebar">
-						<i :class="showSidebar ? 'bzi-close' : 'bzi-bars'"></i>
+					<div class="menu" @click="$store.commit('sidebar/toggle')">
+						<i
+							:class="$store.state.sidebar.isOpen ? 'bzi-close' : 'bzi-bars'"
+						></i>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div v-if="showSidebar && isCollapse">
+		<div v-if="$store.state.sidebar.isOpen && isCollapse">
 			<headerSidebar />
 		</div>
 	</header>
