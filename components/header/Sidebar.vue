@@ -1,18 +1,29 @@
 <template>
 	<div class="sidebar">
+		<Accordion>
+			<AccordionItem v-for="menu in menus" :key="menu.id">
+				<template slot="accordion-trigger">
+					<nuxt-link :to="menu.url">{{ menu.title }}</nuxt-link>
+				</template>
+				<template slot="accordion-content">
+					<div
+						v-for="(list, i) in menu.submenu"
+						:key="i"
+						class="full-list-wrapper"
+					>
+						<ul class="list-nostyle">
+							<li class="submenu">
+								<nuxt-link :to="list.url">
+									<p class="mb-0 pl-16">{{ list.title }}</p>
+								</nuxt-link>
+							</li>
+						</ul>
+					</div>
+				</template>
+			</AccordionItem>
+		</Accordion>
 		<ul class="list-nostyle">
-			<li><nuxt-link to="">Produk</nuxt-link><i class="bzi-angle-down"></i></li>
-			<li>
-				<nuxt-link to="">Aplikasi</nuxt-link><i class="bzi-angle-down"></i>
-			</li>
-			<li>
-				<nuxt-link to="">Belajar</nuxt-link><i class="bzi-angle-down"></i>
-			</li>
-			<li>
-				<nuxt-link to="">Riset & Berita</nuxt-link>
-				<i class="bzi-angle-down"></i>
-			</li>
-			<li><nuxt-link to="">Forum</nuxt-link><i class="bzi-angle-down"></i></li>
+			<li><nuxt-link to="">Forum</nuxt-link></li>
 		</ul>
 		<div class="btn-login">
 			<nuxt-link to="/login" class="btn--primary">MULAI INVESTASI</nuxt-link>
@@ -32,8 +43,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-	name: 'Sidebar'
+	name: 'Sidebar',
+	computed: {
+		...mapState(['menus'])
+	}
 }
 </script>
 
@@ -46,6 +62,7 @@ export default {
 	z-index: 5;
 	overflow: auto;
 	padding: 12px 16px;
+	overflow-y: scroll;
 
 	ul > li {
 		padding: 12px 0;
@@ -67,6 +84,12 @@ export default {
 			&:hover {
 				cursor: pointer;
 			}
+		}
+
+		&.submenu {
+			text-transform: none;
+			font-weight: 400;
+			border-bottom: 1px solid rgba(176, 186, 232, 0.5);
 		}
 	}
 }

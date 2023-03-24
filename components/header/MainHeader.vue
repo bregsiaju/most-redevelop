@@ -83,7 +83,7 @@
 				</div>
 			</div>
 		</div>
-		<div v-if="showSidebar">
+		<div v-if="showSidebar && isCollapse">
 			<headerSidebar />
 		</div>
 	</header>
@@ -236,6 +236,7 @@ export default {
 	white-space: nowrap;
 	border-radius: 0 3px 3px 3px;
 	min-width: 200px;
+	overflow: hidden;
 
 	a {
 		padding: 12px 14px;
@@ -245,6 +246,10 @@ export default {
 			color: white;
 			background-color: #2759a4;
 		}
+	}
+
+	li:not(:last-of-type) {
+		border-bottom: 1px solid rgba(176, 186, 232, 0.5);
 	}
 }
 
