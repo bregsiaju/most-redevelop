@@ -54,4 +54,9 @@ export default {
 	top: 130px;
 	left: 88px;
 }
+
+.benefit >>> .slick-prev:before,
+.benefit >>> .slick-next:before {
+	color: transparent !important;
+}
 </style>

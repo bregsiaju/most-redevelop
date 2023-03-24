@@ -1,5 +1,5 @@
 <template>
-	<div class="cta-carousel">
+	<div class="cta-carousel relative">
 		<VueSlickCarousel v-bind="settings">
 			<div class="text-benefit">
 				<p>
@@ -16,10 +16,7 @@
 			</div>
 		</VueSlickCarousel>
 		<div class="nav-wrapper flex v-center f-space-between">
-			<div class="navigation">
-				<i class="icon-long-arrow-left mr-8"></i>
-				<i class="icon-long-arrow-right"></i>
-			</div>
+			<div class="navigation"></div>
 			<div>
 				<button class="btn--primary mr-20">MULAI INVESTASI</button>
 				<button class="btn--ghost-primary">CARA DAFTAR</button>
@@ -40,7 +37,9 @@ export default {
 				vertical: true,
 				verticalSwiping: true,
 				autoplay: true,
-				swipeToSlide: true
+				swipeToSlide: true,
+				prevArrow: '.icon-long-arrow-left',
+				nextArrow: '.icon-long-arrow-right'
 			}
 		}
 	}
@@ -82,5 +81,22 @@ export default {
 	.text-benefit p {
 		font-size: 36px;
 	}
+}
+</style>
+
+<style scoped>
+.cta-carousel >>> .slick-prev {
+	top: 252px;
+	left: 0px;
+}
+
+.cta-carousel >>> .slick-next {
+	top: 252px;
+	left: 47px;
+}
+
+.cta-carousel >>> .slick-prev:hover::before,
+.cta-carousel >>> .slick-next:hover::before {
+	color: #faa61a !important;
 }
 </style>
