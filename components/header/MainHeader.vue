@@ -38,26 +38,26 @@
 				<Logo />
 				<div class="flex v-center" :class="{ 'nav-collapse': isCollapse }">
 					<ul class="list-nostyle flex">
-						<li>
-							<nuxt-link to="">Produk <i class="bzi-angle-down"></i></nuxt-link>
-						</li>
-						<li>
-							<nuxt-link to=""
-								>Aplikasi <i class="bzi-angle-down"></i
+						<li
+							v-for="menu in menus"
+							:key="menu.id"
+							class="main-menu relative"
+							@mouseover="toggleDropdown(menu.id, 'over')"
+							@mouseleave="toggleDropdown(menu.id, 'leave')"
+						>
+							<nuxt-link :to="menu.url"
+								>{{ menu.title }} <i class="bzi-angle-down"></i
 							></nuxt-link>
+							<div v-show="dropdownItem[menu.id]" class="dropdown">
+								<ul class="list-nostyle">
+									<li v-for="(item, i) in menu.submenu" :key="i">
+										<nuxt-link :to="item.url">{{ item.title }}</nuxt-link>
+									</li>
+								</ul>
+							</div>
 						</li>
-						<li>
-							<nuxt-link to=""
-								>Belajar <i class="bzi-angle-down"></i
-							></nuxt-link>
-						</li>
-						<li>
-							<nuxt-link to=""
-								>Riset & Berita <i class="bzi-angle-down"></i
-							></nuxt-link>
-						</li>
-						<li>
-							<nuxt-link to="">Forum <i class="bzi-angle-down"></i></nuxt-link>
+						<li class="main-menu">
+							<nuxt-link to="/forum">Forum</nuxt-link>
 						</li>
 					</ul>
 					<div class="search relative">
@@ -90,19 +90,29 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
 	data() {
 		return {
 			isSticky: false,
 			searchOn: false,
 			isCollapse: false,
-			showSidebar: false
+			showSidebar: false,
+			dropdownItem: {}
 		}
+	},
+	computed: {
+		...mapState(['menus'])
 	},
 	mounted() {
 		window.addEventListener('scroll', this.handleScroll)
 		window.addEventListener('resize', this.handleResize)
 		this.handleResize()
+		// initialize to hidden submenu
+		this.menus.forEach(menu => {
+			this.$set(this.dropdownItem, menu.id, false)
+		})
 	},
 	beforeDestroy() {
 		window.removeEventListener('scroll', this.handleScroll)
@@ -116,6 +126,16 @@ export default {
 			return window.innerWidth <= 770
 				? (this.isCollapse = true)
 				: (this.isCollapse = false)
+		},
+		toggleDropdown(id, action) {
+			Object.keys(this.dropdownItem).forEach(key => {
+				this.dropdownItem[key] = false
+			})
+			if (action === 'over') {
+				this.dropdownItem[id] = true
+			} else {
+				this.dropdownItem[id] = false
+			}
 		}
 	}
 }
@@ -169,15 +189,29 @@ export default {
 	.container {
 		padding: 8px 0;
 
-		ul > li {
+		li.main-menu {
 			padding: 12px 16px;
 			text-transform: uppercase;
 			font-family: 'Open Sans';
 			color: #5f5f5f;
 			font-weight: 600;
+			border-radius: 3px 3px 0 0;
+
+			a {
+				display: block;
+
+				&:hover {
+					color: white;
+				}
+			}
 
 			i {
 				margin-left: 8px;
+			}
+
+			&:hover {
+				background-color: $primary-blue;
+				color: white;
 			}
 		}
 
@@ -188,6 +222,29 @@ export default {
 
 	.site-logo {
 		margin-left: -20px;
+	}
+}
+
+.dropdown {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: $primary-blue;
+	color: white;
+	text-transform: none;
+	font-weight: 400;
+	white-space: nowrap;
+	border-radius: 0 3px 3px 3px;
+	min-width: 200px;
+
+	a {
+		padding: 12px 14px;
+
+		&:hover,
+		&.nuxt-link-active {
+			color: white;
+			background-color: #2759a4;
+		}
 	}
 }
 
