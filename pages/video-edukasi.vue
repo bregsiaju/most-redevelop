@@ -1,8 +1,8 @@
 <template>
 	<main class="site-main">
 		<div class="container">
-			<div class="bzg sticky v-start">
-				<div class="bzg_c pt-28 sticky" data-col="l4">
+			<Sticky>
+				<template #sticky-content>
 					<ul class="breadcrumb">
 						<li><nuxt-link to="/belajar">Belajar</nuxt-link></li>
 						<li>Video Edukasi</li>
@@ -22,8 +22,8 @@
 							>
 						</li>
 					</ul>
-				</div>
-				<div class="bzg_c content pt-28" data-col="l8">
+				</template>
+				<template #main-content>
 					<div class="bzg card-wrapper ml-0">
 						<div
 							v-for="(video, i) in videos"
@@ -34,8 +34,8 @@
 							<learningCard :content="video" :card-type="`video`" />
 						</div>
 					</div>
-				</div>
-			</div>
+				</template>
+			</Sticky>
 		</div>
 		<div class="about">
 			<div class="bzg">
@@ -167,14 +167,6 @@ export default {
 		}
 	}
 }
-
-.sticky {
-	@media #{$large} {
-		position: sticky;
-		top: 74px;
-	}
-}
-
 .about {
 	margin-top: 148px;
 
