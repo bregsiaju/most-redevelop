@@ -1,23 +1,17 @@
 <template>
 	<div class="card relative">
-		<slot name="card-image">
-			<nuxt-link to="">
-				<img
-					:src="`assets/img/learning/${content.img}`"
-					alt="training"
-					class="card-img"
-				/>
-				<span v-if="cardType === 'video'" class="duration">
-					{{ content.duration ? content.duration : '15:00' }}
-				</span>
-				<span v-if="cardType === 'article'" class="duration">
-					{{ content.duration ? content.duration : '10' }} min read
-				</span>
-				<div v-if="cardType === 'video'" class="play-button">
-					<i class="bzi-play"></i>
-				</div>
-			</nuxt-link>
-		</slot>
+		<nuxt-link to="" class="card-img">
+			<img :src="`assets/img/learning/${content.img}`" alt="training" />
+			<span v-if="cardType === 'video'" class="duration">
+				{{ content.duration ? content.duration : '15:00' }}
+			</span>
+			<span v-if="cardType === 'article'" class="duration">
+				{{ content.duration ? content.duration : '10' }} min read
+			</span>
+			<div v-if="cardType === 'video'" class="play-button">
+				<i class="bzi-play"></i>
+			</div>
+		</nuxt-link>
 		<div v-if="cardType === 'basic'" class="card--text bg-white">
 			<h4 class="f-24 mb-16">{{ content.label }}</h4>
 			<p class="f-18 text-grey mb-0">{{ content.info }}</p>
@@ -49,6 +43,18 @@ export default {
 .card {
 	margin-bottom: 70px;
 	border-bottom: 3px solid $primary-blue;
+
+	.card-img {
+		height: 247px;
+		display: flex;
+		background: black;
+		overflow: hidden;
+		align-items: center;
+
+		img {
+			width: 100%;
+		}
+	}
 
 	.card--text {
 		padding: 30px 20px;
