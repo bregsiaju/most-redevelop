@@ -166,9 +166,9 @@ export default {
 					? '[path][name].[ext]'
 					: `videos/[name].[contenthash:7]v${version}.[ext]`
 		}
-	},
-	server: {
-		port: 3000,
-		host: '0.0.0.0'
 	}
+	// server: {
+	// 	port: 3000,
+	// 	host: '0.0.0.0'
+	// }
 }

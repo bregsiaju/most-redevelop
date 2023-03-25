@@ -99,4 +99,16 @@ export default {
 .cta-carousel >>> .slick-next:hover::before {
 	color: #faa61a !important;
 }
+
+@media (max-width: 576px) {
+	.cta-carousel >>> .slick-prev {
+		top: 100%;
+		left: 40%;
+	}
+
+	.cta-carousel >>> .slick-next {
+		top: 100%;
+		left: 56%;
+	}
+}
 </style>

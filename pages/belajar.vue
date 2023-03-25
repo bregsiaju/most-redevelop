@@ -18,13 +18,13 @@
 		<section class="banner-top">
 			<div class="container">
 				<div class="bzg v-center relative">
-					<div class="bzg_c title mb-56" data-col="l6">
+					<div class="bzg_c title mb-56" data-col="m6">
 						<p class="mb-20">
 							Pahami segala hal tentang <strong>investasi.</strong>
 						</p>
 						<span>Pilih materi-materi berikut ini.</span>
 					</div>
-					<div class="bzg_c" data-col="l6">
+					<div class="bzg_c" data-col="m6">
 						<div class="card">
 							<img
 								:src="`assets/img/learning/start-invest.png`"
@@ -45,11 +45,13 @@
 			</div>
 		</section>
 
-		<!-- training investasi -->
-
-		<!-- video edukasi -->
-
-		<!-- tips & trick -->
+		<div class="section-numbered-wrapper text-dark-grey">
+			<learningNumberedSection
+				v-for="material in materials"
+				:key="material.id"
+				:content="material"
+			/>
+		</div>
 
 		<!-- carousel join -->
 		<homepageJoin />
@@ -57,18 +59,27 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
 	data() {
 		return {
 			notifHidden: false
 		}
+	},
+	computed: {
+		...mapState(['materials'])
 	}
 }
 </script>
 
 <style lang="scss" scoped>
 .top-notif {
-	font-size: 22px;
+	font-size: 18px;
+
+	@media #{$medium} {
+		font-size: 22px;
+	}
 
 	.bzi-close {
 		position: absolute;
@@ -81,8 +92,10 @@ export default {
 }
 
 .title {
+	margin-top: 24px;
+
 	p {
-		font-size: 45px;
+		font-size: 40px;
 		line-height: 1.3;
 		color: $dark-grey;
 	}
@@ -104,18 +117,29 @@ export default {
 		background-color: rgba(242, 242, 242, 0.5);
 		z-index: -1;
 	}
+	@media #{$medium} {
+		margin-top: 0;
+
+		p {
+			font-size: 45px;
+		}
+	}
 }
 
 .card {
 	overflow: hidden;
+	border-bottom: 3px solid $primary-blue;
 
 	.card-image {
-		margin-top: -70px;
+		margin-top: 0;
+
+		@media #{$medium} {
+			margin-top: -70px;
+		}
 	}
 
 	.card-content {
 		padding: 42px;
-		border-bottom: 3px solid $primary-blue;
 
 		h2 {
 			font-size: 30px;
@@ -129,5 +153,9 @@ export default {
 			margin-bottom: 14px;
 		}
 	}
+}
+
+.section-numbered-wrapper {
+	margin-top: 120px;
 }
 </style>
