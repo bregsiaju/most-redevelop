@@ -35,7 +35,7 @@
 							<li v-for="(item, i) in partner" :key="i">
 								<a :href="item.url" target="_blank">
 									<img
-										:src="`assets/img/partner/${item.image}`"
+										:src="`/assets/img/partner/${item.image}`"
 										:alt="item.name"
 									/>
 								</a>

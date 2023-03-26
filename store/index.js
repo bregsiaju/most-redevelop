@@ -49,7 +49,7 @@ export const state = () => ({
 			submenu: [
 				{
 					title: 'Belajar Investasi',
-					url: '/belajar-investasi'
+					url: '/belajar-investasi/mulai-investasi'
 				},
 				{
 					title: 'Kelas Investasi',

@@ -23,7 +23,7 @@
 }
 
 @mixin fontSize($px) {
-	font-size: ($px / $base_px_font_size) * 1em;
+	font-size: ($px / $base_px_font_size) * 1em !important;
 }
 
 @mixin transformPos($x, $y) {
