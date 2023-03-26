@@ -22,4 +22,10 @@ export default {
 		top: 74px;
 	}
 }
+
+.bzg_c.content {
+	padding-left: 44px;
+	background-image: linear-gradient(90deg, #f2f2f2, 35%, #fff 35%);
+	background-position: 44px;
+}
 </style>

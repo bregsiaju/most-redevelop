@@ -90,6 +90,7 @@ export const state = () => ({
 			id: 1,
 			title: 'Training Investasi',
 			desc: 'Ikuti webinar, live streaming, dan traning offline dari MOST.',
+			url: '/kelas-investasi',
 			cardType: 'basic',
 			contents: [
 				{
