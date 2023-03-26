@@ -20,11 +20,17 @@
 			<h4 class="f-24 mb-16">{{ content.label }}</h4>
 			<p class="f-18 text-grey mb-0">{{ content.info }}</p>
 		</div>
-		<div v-if="cardType === 'event'" class="card--text bg-white">
-			<p class="f-18 text-grey mb-0">{{ content.date }}</p>
+		<div v-if="cardType === 'event'" class="card--text -event bg-white">
+			<p class="f-18 text-grey mb-8">{{ content.date }}</p>
 			<h4 class="f-24 mb-16">{{ content.title }}</h4>
-			<p>{{ content.location }}</p>
-			<p><i class="bzi-people"></i>{{ content.quota }}</p>
+			<p class="flex f-gap-12">
+				<i class="icon-location pt-4"></i>
+				<span class="f-14">{{ content.location }}</span>
+			</p>
+			<p class="flex f-gap-12">
+				<i class="bzi-people"></i>
+				<span class="f-14">{{ content.quota }}</span>
+			</p>
 		</div>
 		<div v-else class="card--text bg-white">
 			<p class="f-18 text-grey mb-13">{{ content.category }}</p>
@@ -68,6 +74,12 @@ export default {
 
 	.card--text {
 		padding: 30px 20px;
+
+		&.-event {
+			i {
+				color: $primary-blue;
+			}
+		}
 	}
 }
 
@@ -98,14 +110,16 @@ export default {
 
 .level {
 	position: absolute;
-	right: 9px;
-	bottom: 54.5%;
+	right: 0px;
+	top: 210px;
 	color: white;
 
 	span {
 		background: #3b3b3b;
 		border-radius: 3px;
 		padding: 6px 12px;
+		margin-right: 10px;
+		text-transform: uppercase;
 	}
 }
 </style>

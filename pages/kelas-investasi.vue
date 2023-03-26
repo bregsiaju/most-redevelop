@@ -68,14 +68,56 @@ export default {
 			events: [
 				{
 					date: '28 Okt 2020',
-					img: 'video-1.png',
+					img: 'training-1.png',
 					title: 'Pengenalan Pasar Modal di Indonesia',
 					location: 'Ruang SME PT.Bank,Mandiri Surapati, Bandung',
 					quota: 'Tidak ada kuota tersisa'
 				},
 				{
 					date: '28 Okt 2020',
-					img: 'video-2.png',
+					img: 'training-offline.png',
+					title: 'Pengenalan Pasar Modal di Indonesia',
+					location: 'Ruang SME PT.Bank,Mandiri Surapati, Bandung',
+					quota: 'Tidak ada kuota tersisa'
+				},
+				{
+					date: '28 Okt 2020',
+					img: 'training-online.png',
+					title: 'Pengenalan Pasar Modal di Indonesia',
+					location: 'Ruang SME PT.Bank,Mandiri Surapati, Bandung',
+					quota: 'Tidak ada kuota tersisa'
+				},
+				{
+					date: '28 Okt 2020',
+					img: 'training-1.png',
+					title: 'Pengenalan Pasar Modal di Indonesia',
+					location: 'Ruang SME PT.Bank,Mandiri Surapati, Bandung',
+					quota: 'Tidak ada kuota tersisa'
+				},
+				{
+					date: '28 Okt 2020',
+					img: 'training-1.png',
+					title: 'Pengenalan Pasar Modal di Indonesia',
+					location: 'Ruang SME PT.Bank,Mandiri Surapati, Bandung',
+					quota: 'Tidak ada kuota tersisa'
+				},
+				{
+					date: '28 Okt 2020',
+					img: 'training-online.png',
+					title: 'Pengenalan Pasar Modal di Indonesia',
+					location: 'Ruang SME PT.Bank,Mandiri Surapati, Bandung',
+					quota: 'Tidak ada kuota tersisa'
+				},
+				{
+					date: '28 Okt 2020',
+					img: 'training-1.png',
+					title: 'Pengenalan Pasar Modal di Indonesia',
+					location: 'Ruang SME PT.Bank,Mandiri Surapati, Bandung',
+					quota: 'Tidak ada kuota tersisa'
+				},
+				{
+					date: '28 Okt 2020',
+					img: 'training-offline.png',
 					title: 'Pengenalan Pasar Modal di Indonesia',
 					location: 'Ruang SME PT.Bank,Mandiri Surapati, Bandung',
 					quota: 'Tidak ada kuota tersisa'

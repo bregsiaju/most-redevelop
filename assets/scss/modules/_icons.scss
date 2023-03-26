@@ -12,11 +12,11 @@
 
 @font-face {
   font-family: 'most-icon';
-  src:  url('~assets/fonts/most-icon.eot?3o4olb');
-  src:  url('~assets/fonts/most-icon.eot?3o4olb#iefix') format('embedded-opentype'),
-    url('~assets/fonts/most-icon.ttf?3o4olb') format('truetype'),
-    url('~assets/fonts/most-icon.woff?3o4olb') format('woff'),
-    url('~assets/fonts/most-icon.svg?3o4olb#most-icon') format('svg');
+  src:  url('~assets/fonts/most-icon.eot?p940yl');
+  src:  url('~assets/fonts/most-icon.eot?p940yl#iefix') format('embedded-opentype'),
+    url('~assets/fonts/most-icon.ttf?p940yl') format('truetype'),
+    url('~assets/fonts/most-icon.woff?p940yl') format('woff'),
+    url('~assets/fonts/most-icon.svg?p940yl#most-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -260,6 +260,9 @@
 }
 .icon-phone:before {
   content: "\e942";
+}
+.icon-location:before {
+  content: "\e947";
 }
 .icon-search:before {
   content: "\e986";
