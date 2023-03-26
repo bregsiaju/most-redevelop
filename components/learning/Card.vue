@@ -34,7 +34,9 @@
 		</div>
 		<div v-else class="card--text bg-white">
 			<p class="f-18 text-grey mb-13">{{ content.category }}</p>
-			<h4 class="f-24 mb-0">{{ content.title }}</h4>
+			<nuxt-link to="">
+				<h4 class="f-24 mb-0">{{ content.title }}</h4>
+			</nuxt-link>
 		</div>
 	</div>
 </template>
