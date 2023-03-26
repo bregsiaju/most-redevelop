@@ -11,9 +11,8 @@
 
         &:before {
             margin: 0 8px;
-            content: '>';
+            content: '/';
             display: inline-block;
-            transform: scale(.5, 1.2);
         }
         
         a {

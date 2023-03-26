@@ -4,7 +4,7 @@
 			<Sticky>
 				<template #sticky-content>
 					<ul class="breadcrumb">
-						<li><nuxt-link to="/belajar">Belajar</nuxt-link></li>
+						<li><nuxt-link to="/riset-berita">Terbaru</nuxt-link></li>
 						<li>Berita</li>
 					</ul>
 					<p class="title">Berita</p>

@@ -42,7 +42,6 @@ export default {
 
 @media (max-width: 770px) {
 	.call-to-join {
-		padding-top: 40px;
 		background-size: 30%;
 		background-position: left bottom;
 
@@ -50,6 +49,12 @@ export default {
 			margin-bottom: 0;
 			font-size: 30px;
 		}
+	}
+}
+
+@media (max-width: 576px) {
+	.call-to-join {
+		padding-top: 40px;
 	}
 }
 </style>

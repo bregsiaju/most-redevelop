@@ -100,6 +100,16 @@ export default {
 	color: #faa61a !important;
 }
 
+@media (max-width: 768px) {
+	.cta-carousel >>> .slick-prev {
+		top: 165px;
+	}
+
+	.cta-carousel >>> .slick-next {
+		top: 165px;
+	}
+}
+
 @media (max-width: 576px) {
 	.cta-carousel >>> .slick-prev {
 		top: 100%;
