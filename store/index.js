@@ -57,7 +57,7 @@ export const state = () => ({
 				},
 				{
 					title: 'Video Edukasi',
-					url: '/video-edukasi'
+					url: '/video-edukasi#saham'
 				},
 				{
 					title: 'Tips Investasi',

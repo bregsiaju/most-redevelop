@@ -1,7 +1,10 @@
 <template>
 	<div class="card relative">
-		<nuxt-link to="" class="card-img">
-			<img :src="`assets/img/learning/${content.img}`" alt="training" />
+		<nuxt-link
+			:to="$route.path + (content.url ? content.url : '')"
+			class="card-img"
+		>
+			<img :src="`/assets/img/learning/${content.img}`" alt="training" />
 			<span v-if="cardType === 'video'" class="duration">
 				{{ content.duration ? content.duration : '15:00' }}
 			</span>
@@ -34,7 +37,7 @@
 		</div>
 		<div v-else class="card--text bg-white">
 			<p class="f-18 text-grey mb-13">{{ content.category }}</p>
-			<nuxt-link to="">
+			<nuxt-link :to="$route.path + (content.url ? content.url : '')">
 				<h4 class="f-24 mb-0">{{ content.title }}</h4>
 			</nuxt-link>
 		</div>

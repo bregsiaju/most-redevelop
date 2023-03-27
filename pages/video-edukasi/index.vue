@@ -73,8 +73,10 @@ export default {
 			videos: [
 				{
 					category: 'Saham',
-					img: 'video-1.png',
-					title: 'Filosofi Investasi by Mandiri Sekuritas'
+					img: 'video-thumbnail.png',
+					title:
+						'MOST Online Account Opening: The First Digital KYC in Indonesia',
+					url: '/most-online-accounting-opening'
 				},
 				{
 					category: 'Saham',
