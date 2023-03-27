@@ -1,6 +1,6 @@
 <template>
 	<main class="site-main">
-		<learning-details-material></learning-details-material>
+		<learning-investment></learning-investment>
 	</main>
 </template>
 
