@@ -132,11 +132,23 @@ export default {
 		color: #868686;
 		font-size: 18px;
 		margin-bottom: 32px;
+
+		span:not(:first-child) {
+			border-left: 1px solid $primary-blue;
+			padding-left: 15px;
+			margin-left: 15px;
+		}
+
+		i {
+			color: $primary-blue;
+			margin-left: 12px;
+		}
 	}
 
 	.text-content {
 		font-size: 24px;
-		margin: 44px 0;
+		margin: 44px 0 56px;
+		padding: 0 15%;
 	}
 
 	.recomendations {
