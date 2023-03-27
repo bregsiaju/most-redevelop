@@ -25,7 +25,9 @@
 		</div>
 		<div v-if="cardType === 'event'" class="card--text -event bg-white">
 			<p class="f-18 text-grey mb-8">{{ content.date }}</p>
-			<h4 class="f-24 mb-16">{{ content.title }}</h4>
+			<nuxt-link :to="$route.path + (content.url ? content.url : '')">
+				<h4 class="f-24 mb-16">{{ content.title }}</h4>
+			</nuxt-link>
 			<p class="flex f-gap-12">
 				<i class="icon-location pt-4"></i>
 				<span class="f-14">{{ content.location }}</span>

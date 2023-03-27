@@ -4,7 +4,11 @@ import sitemapConfig from './config/sitemapConfig'
 const listENVS = {
 	HOST_URL: process.env.HOST_URL,
 	BASE_URL: process.env.BASE_URL,
-	API_BASE_URL: process.env.API_URL
+	API_BASE_URL: process.env.API_URL,
+	recaptcha: {
+		siteKey: process.env.RECAPTCHA_SITE_KEY,
+		version: 2
+	}
 }
 /*
  ** Axios Instance
@@ -70,7 +74,8 @@ export default {
 		'@nuxtjs/auth',
 		'@nuxtjs/style-resources',
 		['nuxt-lazy-load', { directiveOnly: true }],
-		'@nuxtjs/sitemap'
+		'@nuxtjs/sitemap',
+		'@nuxtjs/recaptcha'
 	],
 	sitemap: sitemapConfig,
 
@@ -166,9 +171,9 @@ export default {
 					? '[path][name].[ext]'
 					: `videos/[name].[contenthash:7]v${version}.[ext]`
 		}
+	},
+	server: {
+		port: 3000,
+		host: '0.0.0.0'
 	}
-	// server: {
-	// 	port: 3000,
-	// 	host: '0.0.0.0'
-	// }
 }

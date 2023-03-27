@@ -71,7 +71,8 @@ export default {
 					img: 'training-1.png',
 					title: 'Pengenalan Pasar Modal di Indonesia',
 					location: 'Ruang SME PT.Bank,Mandiri Surapati, Bandung',
-					quota: 'Tidak ada kuota tersisa'
+					quota: 'Tidak ada kuota tersisa',
+					url: '/pengenalan-pasar-modal-di-indonesia'
 				},
 				{
 					date: '28 Okt 2020',
