@@ -138,7 +138,7 @@ export const state = () => ({
 			id: 3,
 			title: 'Tips & Trik Investasi',
 			desc: 'Simak artikel-artikel terkait keuangan, investasi, dan promo MOST.',
-			url: '/tips-edukasi',
+			url: '/tips-investasi',
 			cardType: 'article',
 			contents: [
 				{

@@ -100,7 +100,7 @@ export default {
 	padding: 12px 18px;
 	border-radius: 0 50% 50%;
 	right: 20px;
-	bottom: 126px;
+	top: 225px;
 	color: white;
 	box-shadow: 0px 3px 5px #00000029;
 }
