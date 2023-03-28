@@ -36,7 +36,7 @@
 		<div class="main-header bg-white">
 			<div class="container flex f-space-between v-center">
 				<Logo />
-				<div class="flex v-center" :class="{ 'nav-collapse': isCollapse }">
+				<div v-show="!isCollapse" class="flex v-center">
 					<ul class="list-nostyle flex">
 						<li
 							v-for="menu in menus"
@@ -125,7 +125,7 @@ export default {
 			this.isSticky = window.pageYOffset > this.$el.offsetTop
 		},
 		handleResize() {
-			return window.innerWidth <= 770
+			return window.innerWidth < 1200
 				? (this.isCollapse = true)
 				: (this.isCollapse = false)
 		},
@@ -255,8 +255,7 @@ export default {
 	}
 }
 
-@media (max-width: 780px) {
-	.nav-collapse,
+@media (max-width: 1023px) {
 	.mini-header {
 		display: none;
 	}

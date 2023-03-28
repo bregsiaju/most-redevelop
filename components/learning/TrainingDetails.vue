@@ -58,7 +58,7 @@
 					</div>
 					<div class="card-form bg-white">
 						<h5>Daftar sekarang</h5>
-						<form>
+						<form action="register">
 							<select class="form-input">
 								<option value="id">ID Nasabah</option>
 								<option value="email">Email</option>
