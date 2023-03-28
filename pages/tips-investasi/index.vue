@@ -157,6 +157,8 @@ export default {
 }
 
 .card-wrapper {
+	background-image: linear-gradient(90deg, #f2f2f2, 35%, #fff 35%);
+
 	.bzg_c {
 		padding-left: 44px;
 

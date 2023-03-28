@@ -18,31 +18,40 @@
 		<div class="container">
 			<Sticky>
 				<template #sticky-content>
-					<ul class="breadcrumb">
-						<li><nuxt-link to="/belajar">Belajar</nuxt-link></li>
-						<li>Training Offline</li>
-					</ul>
-					<p class="title">Training <strong>Offline</strong></p>
-					<div class="filters">
-						<li>Filters</li>
-						<div class="bzg">
-							<div class="bzg_c" data-col="s4">
-								<span>Bulan</span>
-								<i class="bzi-plus"></i>
+					<div class="pt-28">
+						<ul class="breadcrumb">
+							<li><nuxt-link to="/belajar">Belajar</nuxt-link></li>
+							<li>Training Offline</li>
+						</ul>
+						<p class="title">Training <strong>Offline</strong></p>
+						<div class="filters">
+							<li>Filters</li>
+							<div class="bzg">
+								<div class="bzg_c" data-col="s4">
+									<span>Bulan</span>
+									<i class="bzi-plus"></i>
+								</div>
+								<div class="bzg_c" data-col="s4">
+									<span>Kota</span>
+									<i class="bzi-plus"></i>
+								</div>
+								<div class="bzg_c" data-col="s4">
+									<span>Level</span>
+									<i class="bzi-plus"></i>
+								</div>
 							</div>
-							<div class="bzg_c" data-col="s4">
-								<span>Kota</span>
-								<i class="bzi-plus"></i>
-							</div>
-							<div class="bzg_c" data-col="s4">
-								<span>Level</span>
-								<i class="bzi-plus"></i>
-							</div>
+							<!-- test view when any content is not found -->
+							<button
+								class="btn--ghost-primary-blue mt-28"
+								@click="filterNotFound = !filterNotFound"
+							>
+								{{ filterNotFound ? 'Filter On' : 'Filter Off' }}
+							</button>
 						</div>
 					</div>
 				</template>
 				<template #main-content>
-					<div class="bzg card-wrapper ml-0">
+					<div v-if="!filterNotFound" class="bzg card-wrapper ml-0 pt-28">
 						<div
 							v-for="(event, i) in events"
 							:key="i"
@@ -52,10 +61,40 @@
 							<learningCard :content="event" :card-type="`event`" />
 						</div>
 					</div>
+
+					<!-- if content not found  -->
+					<div v-if="filterNotFound" class="not-found">
+						<div class="container container--small text-center">
+							<img src="~assets/img/not-found.png" alt="icon not found" />
+							<p class="f-24 f--semi mb-20">
+								Tidak Ditemukan Kelas Investasi Baru.
+							</p>
+							<p class="f-18">
+								Kelas investasi berikutnya akan segera hadir. Silahkan cek
+								kembali di periode berikutnya
+							</p>
+						</div>
+					</div>
 				</template>
 			</Sticky>
 		</div>
+		<!-- recomendations -->
+		<div v-if="filterNotFound" class="recomendations container">
+			<h1 class="title f-36">Anda mungkin juga menyukai ini.</h1>
+			<div class="bzg">
+				<div
+					v-for="(recomendation, i) in recomendations"
+					:key="i"
+					class="bzg_c"
+					data-col="l4"
+				>
+					<learningCard :content="recomendation" :card-type="`article`" />
+				</div>
+			</div>
+		</div>
+		<!-- end recomendations -->
 
+		<!-- call to join component -->
 		<homepageJoin />
 	</main>
 </template>
@@ -65,6 +104,7 @@ export default {
 	data() {
 		return {
 			notifHidden: false,
+			filterNotFound: false,
 			events: [
 				{
 					date: '28 Okt 2020',
@@ -122,6 +162,23 @@ export default {
 					title: 'Pengenalan Pasar Modal di Indonesia',
 					location: 'Ruang SME PT.Bank,Mandiri Surapati, Bandung',
 					quota: 'Tidak ada kuota tersisa'
+				}
+			],
+			recomendations: [
+				{
+					category: 'Saham',
+					img: 'video-thumbnail.png',
+					title: '5 Jenis Investasi Paling Tepat Untuk Millennials'
+				},
+				{
+					category: 'Saham',
+					img: 'video-2.png',
+					title: 'Filosofi Investasi by Mandiri Sekuritas'
+				},
+				{
+					category: 'Saham',
+					img: 'video-1.png',
+					title: 'Filosofi Investasi by Mandiri Sekuritas'
 				}
 			]
 		}
@@ -190,6 +247,8 @@ export default {
 }
 
 .card-wrapper {
+	background-image: linear-gradient(90deg, #f2f2f2, 35%, #fff 35%);
+
 	.bzg_c {
 		padding-left: 44px;
 
@@ -207,5 +266,18 @@ export default {
 			margin-bottom: 186px;
 		}
 	}
+}
+
+.not-found {
+	background-color: #f2f2f2;
+
+	@media #{$large} {
+		width: 100%;
+		padding: 72px 0;
+	}
+}
+
+.recomendations {
+	padding: 55px 0 20px;
 }
 </style>

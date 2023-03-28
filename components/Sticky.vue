@@ -1,9 +1,9 @@
 <template>
 	<div class="bzg v-start">
-		<div class="bzg_c pt-28 sticky" data-col="l4">
+		<div class="bzg_c sticky" data-col="l4">
 			<slot name="sticky-content"></slot>
 		</div>
-		<div class="bzg_c content pt-28" data-col="l8">
+		<div class="bzg_c content relative" data-col="l8">
 			<slot name="main-content"></slot>
 		</div>
 	</div>
@@ -16,16 +16,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sticky {
-	@media #{$large} {
+@media #{$large} {
+	.sticky {
 		position: sticky;
 		top: 74px;
 	}
-}
 
-.bzg_c.content {
-	padding-left: 44px;
-	background-image: linear-gradient(90deg, #f2f2f2, 35%, #fff 35%);
-	background-position: 44px;
+	.bzg_c.content {
+		padding-left: 44px;
+	}
 }
 </style>
