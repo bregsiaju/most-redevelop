@@ -40,12 +40,12 @@
 			<!-- content glosarium -->
 			<div class="bzg">
 				<div
-					v-for="(item, i) in glosarium"
+					v-for="(list, i) in perColumn"
 					:key="i"
 					class="bzg_c"
 					data-col="m6, l4"
 				>
-					<Accordion>
+					<Accordion v-for="(item, x) in list" :key="x">
 						<AccordionItem>
 							<template slot="accordion-trigger">
 								<p class="mb-0 f--semi">{{ item.trigger }}</p>
@@ -62,6 +62,8 @@
 </template>
 
 <script>
+import { divideArray } from '~/plugins/arrayDivision.js'
+
 export default {
 	data() {
 		return {
@@ -85,8 +87,29 @@ export default {
 					trigger: 'Aktiva Pajak Tangguhan',
 					content:
 						'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem possimus cupiditate, quod commodi amet deserunt? Aspernatur adipisci optio nemo. Nostrum.'
+				},
+				{
+					trigger: 'Afiliasi',
+					content:
+						'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, temporibus?'
+				},
+				{
+					trigger: 'Agio Saham',
+					content:
+						'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, assumenda!'
+				},
+				{
+					trigger: 'Aktiva Berwujud Bersih (Net Tangible Assets)',
+					content:
+						'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel earum minima impedit.'
+				},
+				{
+					trigger: 'Aktiva Pajak Tangguhan',
+					content:
+						'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem possimus cupiditate, quod commodi amet deserunt? Aspernatur adipisci optio nemo. Nostrum.'
 				}
-			]
+			],
+			perColumn: []
 		}
 	},
 	computed: {
@@ -97,6 +120,9 @@ export default {
 			}
 			return result
 		}
+	},
+	mounted() {
+		this.perColumn = divideArray(this.glosarium)
 	}
 }
 </script>
