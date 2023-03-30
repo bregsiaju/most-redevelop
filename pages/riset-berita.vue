@@ -6,7 +6,7 @@
 				<div class="bzg">
 					<div class="bzg_c" data-col="m5, l5">
 						<div>
-							<img src="/assets/img/news/cup.jpg" alt="promo banner" />
+							<img src="/assets/img/learning/cup.jpg" alt="promo banner" />
 						</div>
 					</div>
 					<div class="bzg_c" data-col="m7, l6">
@@ -72,12 +72,64 @@
 				</div>
 			</div>
 		</section>
-		<section id="berita"></section>
+		<section id="berita">
+			<div class="container relative">
+				<div class="bzg">
+					<div class="bzg_c text-white" data-col="l5">
+						<h1>BERITA</h1>
+						<nuxt-link to="/berita" class="flex v-center mb-64 f-gap-20">
+							<p class="title mb-0 text-reg">Lihat berita terkini di sini</p>
+							<i class="icon-long-arrow-right"></i>
+						</nuxt-link>
+						<p class="f-24 mb-30 pr-36">
+							Simak berita seputar keuangan dan investasi, juga berita emiten,
+							promo, hingga sayembara!
+						</p>
+						<div class="navigation">
+							<i class="icon-long-arrow-left mr-8"></i>
+							<i class="icon-long-arrow-right"></i>
+						</div>
+					</div>
+					<div class="bzg_c pull-right" data-col="l6" data-offset="l1">
+						<VueSlickCarousel v-bind="settings">
+							<learningCard
+								v-for="(news, i) in newsCarousel"
+								:key="i"
+								:content="news"
+								:card-type="`article`"
+							/>
+						</VueSlickCarousel>
+					</div>
+				</div>
+			</div>
+		</section>
 	</main>
 </template>
 
 <script>
-export default {}
+export default {
+	data() {
+		return {
+			newsCarousel: [
+				{
+					category: 'Berita Emiten - 11 Jan 2020',
+					img: 'cup.jpg',
+					title:
+						'Penawaran Umum Obligasi Berkelanjutan II Sarana Multi Infrastruktur Tahap IV'
+				},
+				{
+					category: 'Berita Emiten - 11 Jan 2020',
+					img: 'newspaper.jpg',
+					title:
+						'Penawaran Umum Obligasi Berkelanjutan II Sarana Multi Infrastruktur Tahap IV'
+				}
+			],
+			settings: {
+				variableWidth: true
+			}
+		}
+	}
+}
 </script>
 
 <style lang="scss" scoped>
@@ -121,10 +173,15 @@ export default {}
 	}
 }
 
-.container {
-	.bzg {
-		.bzg_c:first-child {
-			border-right: 1px solid #e2e2e2;
+@media #{$medium} {
+	#promo,
+	#riset {
+		.container {
+			.bzg {
+				.bzg_c:first-child {
+					border-right: 1px solid #e2e2e2;
+				}
+			}
 		}
 	}
 }
@@ -159,6 +216,81 @@ export default {}
 
 	a {
 		font-size: 20px;
+	}
+}
+
+#berita {
+	background: linear-gradient(90deg, $primary-blue, 100%, #fff 100%);
+	background-repeat: no-repeat;
+	background-size: 96.1%;
+
+	@media #{$large} {
+		background-size: 83%;
+	}
+
+	h1 {
+		font-size: 85px;
+		line-height: 1;
+		margin-bottom: 20px;
+
+		@media #{$large} {
+			font-size: 125px;
+		}
+	}
+
+	.bzg {
+		padding: 98px 0;
+	}
+
+	.card {
+		width: 330px !important;
+		margin-right: 35px;
+		margin-bottom: 0px;
+	}
+
+	.pull-right {
+		@media #{$large} {
+			transform: translateX(40px);
+			padding-left: 0px;
+		}
+	}
+
+	.navigation {
+		visibility: hidden;
+	}
+}
+</style>
+
+<style scoped>
+#berita >>> .slick-prev {
+	top: 372px;
+	left: -662px;
+}
+
+#berita >>> .slick-next {
+	top: 372px;
+	left: -615px;
+}
+
+#berita >>> .slick-prev:before,
+#berita >>> .slick-next:before {
+	color: white !important;
+}
+
+#berita >>> .slick-prev:hover::before,
+#berita >>> .slick-next:hover::before {
+	color: #faa61a !important;
+}
+
+@media (max-width: 768px) {
+	#berita >>> .slick-prev {
+		top: -29px;
+		left: 0px;
+	}
+
+	#berita >>> .slick-next {
+		top: -29px;
+		left: 46px;
 	}
 }
 </style>
