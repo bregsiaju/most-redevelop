@@ -10,18 +10,13 @@
 				>Dilihat <strong>{{ content.totalViews }}</strong></span
 			>
 		</div>
-		<div
-			class="button-hover"
-			@mouseover="cardHovered = true"
-			@mouseleave="cardHovered = false"
-		>
+		<div class="button-detail" @click="cardHovered = !cardHovered">
 			<i class="bzi-plus"></i>
 		</div>
 		<div
 			v-show="cardHovered"
-			class="hover--content"
-			@mouseover="cardHovered = true"
-			@mouseleave="cardHovered = false"
+			class="detail--content"
+			@click="cardHovered = !cardHovered"
 		>
 			<p class="f-20 text-semi">Emiten Pilihan</p>
 			<button class="btn--ghost-light-grey btn--block mb-16">BACA</button>
@@ -66,7 +61,7 @@ export default {
 		line-height: 1.3;
 	}
 
-	.button-hover {
+	.button-detail {
 		position: absolute;
 		bottom: 0px;
 		right: 0px;
@@ -74,9 +69,13 @@ export default {
 		color: $primary-blue;
 		padding: 14px 11px 7px 20px;
 		border-radius: 80% 0 0 0;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 
-	.hover--content {
+	.detail--content {
 		position: absolute;
 		height: 100%;
 		width: 100%;
