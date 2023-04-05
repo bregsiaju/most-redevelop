@@ -143,6 +143,11 @@ export default {
 			padding-top: 54px;
 			padding-bottom: 54px;
 
+			@media (max-width: 576px) {
+				padding-top: 28px;
+				padding-bottom: 28px;
+			}
+
 			&.left {
 				padding-left: 43px;
 				padding-right: 54px;
@@ -210,6 +215,10 @@ export default {
 		color: $grey;
 		width: 80%;
 		line-height: 1.4;
+
+		@media (max-width: 769px) {
+			font-size: 18px;
+		}
 	}
 }
 

@@ -94,11 +94,12 @@ export default {
 			width: 100%;
 
 			.title {
-				font-size: 36px;
+				font-size: 28px;
 			}
 
 			.desc {
 				width: 80%;
+				font-size: 20px;
 			}
 		}
 	}

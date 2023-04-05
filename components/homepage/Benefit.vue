@@ -38,8 +38,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.benefit-item {
-	padding: 44px 0;
+@media #{$medium} {
+	.benefit-item {
+		padding: 44px 0;
+	}
 }
 
 .navigation {
@@ -103,7 +105,7 @@ export default {
 		padding-top: 50px;
 
 		img {
-			height: 300px;
+			height: 250px;
 		}
 	}
 }

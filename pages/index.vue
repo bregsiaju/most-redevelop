@@ -88,20 +88,27 @@ section.call-to-action {
 }
 
 @media (max-width: 770px) {
-	.title {
-		font-size: 30px;
+	section.benefit {
+		padding: 40px 0;
 	}
-}
 
-@media (max-width: 770px) {
+	section.simulation {
+		padding: 40px 0;
+	}
+
 	section.call-to-action {
-		padding-top: 40px;
+		padding-top: 0px;
+		padding-bottom: 70px;
 		background-size: 30%;
 		background-position: left bottom;
 
 		.title p {
 			margin-bottom: 0;
 		}
+	}
+
+	.title {
+		font-size: 28px;
 	}
 }
 </style>

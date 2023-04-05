@@ -188,14 +188,37 @@ h4 {
 
 	.bzg_c.input-data {
 		padding-right: 0;
+
+		h2 {
+			font-size: 24px;
+			margin-bottom: 24px;
+		}
+
+		&.pt-32 {
+			padding-top: 0 !important;
+		}
 	}
 
 	.result-wrapper {
 		margin-left: 20px;
+		padding: 16px;
 	}
 
 	.notes {
 		margin-left: 24px;
+		font-size: 12px;
+	}
+
+	.compare {
+		padding: 14px 16px;
+
+		.bzg_c > p:first-child {
+			font-size: 14px;
+		}
+
+		.bzg_c > p:last-of-type {
+			font-size: 16px;
+		}
 	}
 }
 </style>
