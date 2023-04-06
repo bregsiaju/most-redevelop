@@ -30,7 +30,7 @@
 		<section id="riset">
 			<div class="container">
 				<div class="bzg">
-					<div class="bzg_c pr-32" data-col="m5">
+					<div class="bzg_c" data-col="m5">
 						<p class="title">Rekomendasi Saham Hari Ini</p>
 						<span class="f-14 text-grey">
 							Last update : 10 : 30 : 00 WIB | 14 Jun 2020
@@ -50,21 +50,15 @@
 							investasi yang tepat.
 						</span>
 						<ul class="list-nostyle riset-result">
-							<li class="flex f-gap-20 v-center">
-								<span class="f-16">16 Juli 2020</span>
-								<a href="">Matriks Valuasi Saham 16 Juni 2020</a>
-							</li>
-							<li class="flex f-gap-20 v-center">
-								<span class="f-16">16 Juli 2020</span>
-								<a href="">Investor Digest 08 Juli 2020</a>
-							</li>
-							<li class="flex f-gap-20 v-center">
-								<span class="f-16">16 Juli 2020</span>
-								<a href="">Trading idea untuk 9 Juni 2020</a>
-							</li>
-							<li class="flex f-gap-20 v-center">
-								<span class="f-16">16 Juli 2020</span>
-								<a href="">Matriks Valuasi Saham Syariah 06 Juli 2020</a>
+							<li v-for="(riset, i) in dailyRiset" :key="i">
+								<div class="bzg">
+									<div class="bzg_c pt-0 pb-0" data-col="s3">
+										{{ riset.date }}
+									</div>
+									<div class="bzg_c pt-0 pb-0" data-col="s9">
+										<nuxt-link to="">{{ riset.title }}</nuxt-link>
+									</div>
+								</div>
 							</li>
 						</ul>
 						<button class="btn--primary">SELENGKAPNYA</button>
@@ -77,7 +71,7 @@
 				<div class="bzg">
 					<div class="bzg_c text-white" data-col="l5">
 						<h1>BERITA</h1>
-						<nuxt-link to="/berita" class="flex v-center mb-64 f-gap-20">
+						<nuxt-link to="/berita" class="flex v-center f-gap-20 linking">
 							<p class="title mb-0 text-reg">Lihat berita terkini di sini</p>
 							<i class="icon-long-arrow-right"></i>
 						</nuxt-link>
@@ -110,6 +104,24 @@
 export default {
 	data() {
 		return {
+			dailyRiset: [
+				{
+					date: '17 Juli 2020',
+					title: 'Matriks Valuasi Saham 16 Juli 2020'
+				},
+				{
+					date: '1 Juli 2020',
+					title: 'Investor Digest 08 Juli 2020'
+				},
+				{
+					date: '9 Juni 2020',
+					title: 'Trading idea untuk 9 Juni 2020'
+				},
+				{
+					date: '8 Juli 2020',
+					title: 'Matriks Valuasi Saham Syariah 06 Juli 2020'
+				}
+			],
 			newsCarousel: [
 				{
 					category: 'Berita Emiten - 11 Jan 2020',
@@ -125,7 +137,16 @@ export default {
 				}
 			],
 			settings: {
-				variableWidth: true
+				variableWidth: true,
+				responsive: [
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						}
+					}
+				]
 			}
 		}
 	}
@@ -171,6 +192,17 @@ export default {
 		color: #e1e1e1;
 		opacity: 30%;
 	}
+
+	@media #{$md} {
+		.bzg_c {
+			padding-top: 32px;
+			padding-bottom: 16px;
+		}
+
+		.shadow {
+			display: none;
+		}
+	}
 }
 
 @media #{$medium} {
@@ -190,15 +222,24 @@ export default {
 	padding: 30px;
 	box-shadow: 0px 9px 30px #43434312;
 	border-radius: 3px;
+
+	@media #{$medium} {
+		margin-right: 36px;
+	}
 }
 
 #riset {
 	.bzg_c {
 		padding-top: 30px;
-		padding-bottom: 71px;
+		padding-bottom: 30px;
 	}
 
-	@media #{$large} {
+	@media #{$medium} {
+		.bzg_c {
+			padding-top: 30px;
+			padding-bottom: 71px;
+		}
+
 		.bzg_c:last-child {
 			padding-right: 80px;
 		}
@@ -214,22 +255,21 @@ export default {
 		margin-bottom: 32px;
 	}
 
-	a {
-		font-size: 20px;
-	}
+	// a {
+	// 	font-size: 20px;
+	// }
 }
 
 #berita {
 	background: linear-gradient(90deg, $primary-blue, 100%, #fff 100%);
 	background-repeat: no-repeat;
-	background-size: 96.1%;
 
 	@media #{$large} {
 		background-size: 83%;
 	}
 
 	h1 {
-		font-size: 85px;
+		font-size: 48px;
 		line-height: 1;
 		margin-bottom: 20px;
 
@@ -238,20 +278,39 @@ export default {
 		}
 	}
 
+	.linking {
+		margin-bottom: 24px;
+
+		.title {
+			font-size: 24px;
+		}
+	}
+
 	.bzg {
-		padding: 98px 0;
+		padding: 40px 0;
 	}
 
 	.card {
 		width: 330px !important;
 		margin-right: 35px;
 		margin-bottom: 0px;
+
+		@media #{$sm} {
+			width: 260px !important;
+			margin-rigt: 12px;
+		}
 	}
 
-	.pull-right {
-		@media #{$large} {
+	@media #{$large} {
+		.linking {
+			margin-bottom: 64px;
+		}
+		.pull-right {
 			transform: translateX(40px);
 			padding-left: 0px;
+		}
+		.bzg {
+			padding: 98px 0;
 		}
 	}
 

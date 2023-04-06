@@ -201,7 +201,7 @@ h4 {
 
 	.result-wrapper {
 		margin-left: 20px;
-		padding: 16px;
+		padding: 16px 8px;
 	}
 
 	.notes {

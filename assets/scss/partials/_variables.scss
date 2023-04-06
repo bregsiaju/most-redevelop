@@ -70,6 +70,9 @@ $shadow: 0 2px 6px rgba($black, 0.4);
 // Break Points
 // ------------------------------------------------------------------------ //
 
+$sm: 'screen and (max-width: 576px)';
+$md: 'screen and (max-width: 769px)';
+
 $small: 'screen and (min-width: 28em)';
 $small_portrait: 'screen and (min-width: 28em) and (orientation: portrait)';
 $small_landscape: 'screen and (min-width: 28em) and (orientation: landscape)';
