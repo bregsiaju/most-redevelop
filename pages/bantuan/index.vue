@@ -47,7 +47,7 @@
 						data-col="m6, l4"
 					>
 						<img :src="`/assets/img/help/${category.icon}`" alt="icon" />
-						<h2>{{ category.name }}</h2>
+						<h3>{{ category.name }}</h3>
 						<div class="link-wrapper">
 							<ul class="list-nostyle">
 								<li v-for="(list, x) in category.questions" :key="x">
@@ -55,7 +55,9 @@
 								</li>
 							</ul>
 						</div>
-						<nuxt-link :to="category.url" class="text-primary f-14"
+						<nuxt-link
+							:to="$route.path + category.url"
+							class="text-primary f-14"
 							>LIHAT SELENGKAPNYA</nuxt-link
 						>
 					</div>
@@ -66,6 +68,7 @@
 
 		<!-- contact us -->
 		<section class="contact-us relative">
+			<div class="bg-full"></div>
 			<div class="container">
 				<h1 class="title">Hubungi Kami</h1>
 				<p class="text-grey">
@@ -95,7 +98,7 @@ export default {
 				{
 					icon: 'icon-chart.png',
 					name: 'Mulai Investasi',
-					url: '',
+					url: '/mulai-investasi',
 					questions: [
 						'Modus Kejahatan di Transaksi Efek',
 						'Pasar modal yang cocok untuk saya',
@@ -105,7 +108,7 @@ export default {
 				{
 					icon: 'icon-account.png',
 					name: 'Akun & Rekening Efek',
-					url: '',
+					url: '/akun-dan-rekening-efek',
 					questions: [
 						'Cara mengganti password',
 						'Cara mengganti PIN',
@@ -115,7 +118,7 @@ export default {
 				{
 					icon: 'icon-document.png',
 					name: 'Dokumen & Pajak',
-					url: '',
+					url: '/dokumen-dan-pajak',
 					questions: [
 						'Penarikan Dana',
 						'Klaim waris atau efek',
@@ -125,7 +128,7 @@ export default {
 				{
 					icon: 'icon-stock.png',
 					name: 'Saham',
-					url: '',
+					url: '/saham',
 					questions: [
 						'Cara klaim waris atas efek',
 						'IPO Saham',
@@ -135,7 +138,7 @@ export default {
 				{
 					icon: 'icon-reksadana.png',
 					name: 'Reksa Dana',
-					url: '',
+					url: '/reksa-dana',
 					questions: [
 						'Apa saja risiko investasi pada Reksa Dana?',
 						'Keuntungan investasi Reksa Dana',
@@ -145,7 +148,7 @@ export default {
 				{
 					icon: 'icon-obligasi.png',
 					name: 'Obligasi',
-					url: '',
+					url: '/obligasi',
 					questions: [
 						'Pengertian Obligasi',
 						'Jadwal Obligasi',
@@ -155,7 +158,7 @@ export default {
 				{
 					icon: 'icon-syariah.png',
 					name: 'Syariah',
-					url: '',
+					url: '/syariah',
 					questions: [
 						'Pengertian Saham Syariah',
 						'Produk Syariah',
@@ -170,7 +173,7 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-	font-size: 44px;
+	font-size: 40px;
 	line-height: 1.2;
 }
 
@@ -229,14 +232,14 @@ export default {
 		margin-bottom: 28px;
 	}
 
-	h2 {
+	h3 {
 		margin-bottom: 20px;
 	}
 
 	.link-wrapper {
 		li {
-			font-size: 20px;
-			margin-bottom: 20px;
+			font-size: 18px;
+			margin-bottom: 18px;
 		}
 	}
 
@@ -246,11 +249,20 @@ export default {
 }
 
 .contact-us {
-	background-color: #f2f2f2;
+	// background-color: #f2f2f2;
 	padding: 40px 0;
 
+	.bg-full {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background-color: #f2f2f2;
+		z-index: -2;
+		top: 0;
+	}
+
 	p {
-		font-size: 30px;
+		font-size: 28px;
 	}
 
 	img {
@@ -258,6 +270,7 @@ export default {
 		right: 0;
 		top: 0;
 		height: 100%;
+		z-index: -1;
 	}
 }
 </style>

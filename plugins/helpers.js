@@ -91,9 +91,9 @@ export default (context, inject) => {
 			]
 		}
 	}
-	
-	const jsonLD = ({type, jsonLDObjects}) =>{
-		// Reference for type and field: https://schema.org/docs/full.html 
+
+	const jsonLD = ({ type, jsonLDObjects }) => {
+		// Reference for type and field: https://schema.org/docs/full.html
 		return {
 			'@context': 'https://schema.org/',
 			'@type': type || 'WebPage',
@@ -111,6 +111,12 @@ export default (context, inject) => {
 		)
 	}
 
+	const toTitleCase = str => {
+		return str.replace(/\w\S*/g, function (txt) {
+			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+		})
+	}
+
 	inject('setCurrency', setCurrency)
 	inject('catch404', catch404)
 	inject('catch500', catch500)
@@ -122,6 +128,7 @@ export default (context, inject) => {
 	inject('SEOMeta', SEOMeta)
 	inject('StrongPassword', StrongPassword)
 	inject('jsonLD', jsonLD)
+	inject('toTitleCase', toTitleCase)
 }
 
 export function isEmpty(data) {
