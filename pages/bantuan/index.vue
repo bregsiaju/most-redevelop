@@ -74,7 +74,9 @@
 				<p class="text-grey">
 					Informasikan kepada kami kendala yang Anda alami.
 				</p>
-				<button class="btn--primary">KONTAK KAMI</button>
+				<nuxt-link to="/bantuan/hubungi-kami" class="btn--primary"
+					>KONTAK KAMI</nuxt-link
+				>
 			</div>
 			<img src="~assets/img/bg-line-circle-dot.png" alt="bg" />
 		</section>
