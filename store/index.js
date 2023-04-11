@@ -158,5 +158,74 @@ export const state = () => ({
 				}
 			]
 		}
+	],
+	listCategory: [
+		{
+			title: 'Mulai Investasi',
+			url: '/mulai-investasi'
+		},
+		{
+			title: 'Akun & Rekening Efek',
+			url: '/akun-dan-rekening-efek'
+		},
+		{
+			title: 'Dokumen & Pajak',
+			url: '/dokumen-dan-pajak',
+			questions: [
+				{
+					id: 1,
+					title: 'Penarikan Dana',
+					content: ''
+				},
+				{
+					id: 2,
+					title: 'Klaim waris atau efek',
+					content: ''
+				},
+				{
+					id: 3,
+					title: 'Apakah Nasabah bisa melakukan transaksi margin ?',
+					content: `
+					<h3>Apakah Nasabah bisa melakukan transaksi margin ?</h3>
+					<p>Fasilitas Margin adalah dimana nasabah mendapatkan pinjaman/ pembiayaan untuk penyelesian transaksi. Nasabah bisa melakukan transaksi margin dengan rekening yang terpisah dari rekening sebelumnya yang sudah dimiliki, baik itu rekening Online ataupun rekening Full Service. Nasabah bisa menghubungi Cabang terdekat atau Care Center untuk informasi dan pembukaan rekening margin.</p>
+					<h4>Fasilitas ini diberikan dengan ketentuan sebagai berikut :</h4>
+					<ol>
+						<li>Mengajukan permohonan fasilitas transaksi margin.</li>
+						<li>Telah menjadi Nasabah Sekuritas selama 3 bulan, diikuti penilaian dan persetujuan dari pihak Mandiri Sekuritas</li>
+						<li>Deposit awal minimal senilai Rp 200.000.000,00</li>
+						<li>Efek yang diperdagangkan termasuk marginable share</li>
+						<li>Limit trading-nya adalah : (2.81x cash) + (1.81x portfolio)</li>
+						<li>Biaya yang dikenakan untuk transaksi baik beli maupun jual mengikuti biaya transaksi rekening reguler</li>
+					</ol>
+					`
+				},
+				{
+					id: 4,
+					title: 'Pemindahan Saham dari sekuritas lain',
+					content: ''
+				},
+				{
+					id: 5,
+					title: 'Ketentuan umum bank transfer',
+					content: ''
+				}
+			]
+		},
+		{
+			title: 'Saham',
+			url: '/saham'
+		},
+		{
+			title: 'Reksa Dana',
+			url: '/reksa-dana'
+		},
+		{
+			title: 'Obligasi',
+			url: '/obligasi'
+		},
+		{
+			title: 'Syariah',
+			url: '/syariah'
+		}
 	]
 })

@@ -14,18 +14,17 @@
 				<template #main-content>
 					<ul class="breadcrumb f-16">
 						<li><nuxt-link to="/bantuan">Bantuan</nuxt-link></li>
+						<li>
+							<nuxt-link :to="`/bantuan/${pageBefore.url}`">
+								{{ pageBefore.title }}
+							</nuxt-link>
+						</li>
 						<li>{{ activePage }}</li>
 					</ul>
-					<h2>{{ activePage }}</h2>
-					<div class="question-list">
-						<ul class="list-nostyle">
-							<li v-for="list in listCategory[2].questions" :key="list.id">
-								<nuxt-link :to="`${$route.path}/${list.id}`">
-									{{ list.title }}
-								</nuxt-link>
-							</li>
-						</ul>
-					</div>
+					<div
+						class="content"
+						v-html="listCategory[2].questions[2].content"
+					></div>
 				</template>
 			</StickyHelpers>
 		</div>
@@ -42,10 +41,16 @@ export default {
 	},
 	computed: {
 		...mapState(['listCategory']),
+		pageBefore() {
+			const url = this.$route.params.category
+			const title = url?.replace('-dan-', '-&-').replace(/-/g, ' ')
+			return {
+				url,
+				title: this.$toTitleCase(title)
+			}
+		},
 		activePage() {
-			const activePage = this.$route.params.category
-			const title = activePage.replace('-dan-', '-&-').replace(/-/g, ' ')
-			return this.$toTitleCase(title)
+			return this.$route.params.details
 		}
 	}
 }
@@ -64,18 +69,21 @@ export default {
 			color: $primary;
 			border-left-color: $primary;
 		}
+
+		@media #{$md} {
+			padding: 4px 16px;
+			font-size: 16px;
+		}
 	}
 }
 
-.question-list {
-	margin-top: 22px;
+.content {
+	/deep/ p {
+		font-size: 18px;
+	}
 
-	li {
-		a {
-			display: block;
-			font-size: 18px;
-			margin-bottom: 18px;
-		}
+	/deep/ li {
+		font-size: 18px;
 	}
 }
 </style>
