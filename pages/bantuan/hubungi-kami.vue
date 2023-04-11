@@ -15,10 +15,10 @@
 						<div class="contact-us">
 							<h5 class="text-primary-blue">Mandiri Sekuritas</h5>
 							<p>
-								Menara Mandiri 1 Lt. 24 - 25 Jl. Jend. Sudirman Kav. 54 - 55,
-								Jakarta 12190
+								Menara Mandiri 1 Lt. 24 - 25 <br />
+								Jl. Jend. Sudirman Kav. 54 - 55, Jakarta 12190
 							</p>
-							<div class="flex f-gap-16 v-center">
+							<div class="flex f-gap-16 v-center mb-12">
 								<i class="icon-phone"></i>
 								<span>Care Centre <b>14032</b></span>
 							</div>
@@ -105,7 +105,7 @@ export default {
 }
 
 section {
-	padding-bottom: 75px;
+	padding-bottom: 130px;
 
 	img {
 		width: 12%;
@@ -113,8 +113,12 @@ section {
 		position: absolute;
 		bottom: 0px;
 		left: 0px;
+	}
 
-		@media #{$md} {
+	@media #{$md} {
+		padding-bottom: 50px;
+
+		img {
 			display: none;
 		}
 	}
