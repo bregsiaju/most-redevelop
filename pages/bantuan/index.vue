@@ -67,25 +67,18 @@
 		<!-- end category -->
 
 		<!-- contact us -->
-		<section class="contact-us relative">
-			<div class="bg-full"></div>
-			<div class="container">
-				<h1 class="title">Hubungi Kami</h1>
-				<p class="text-grey">
-					Informasikan kepada kami kendala yang Anda alami.
-				</p>
-				<nuxt-link to="/bantuan/hubungi-kami" class="btn--primary"
-					>KONTAK KAMI</nuxt-link
-				>
-			</div>
-			<img src="~assets/img/bg-line-circle-dot.png" alt="bg" />
-		</section>
+		<LastSection :data="contact" />
 		<!-- end contact us -->
 	</main>
 </template>
 
 <script>
+import LastSection from '~/components/LastSection.vue'
+
 export default {
+	components: {
+		LastSection
+	},
 	data() {
 		return {
 			genQuestions: [
@@ -167,7 +160,13 @@ export default {
 						'Mekanisme Transaksi Syariah'
 					]
 				}
-			]
+			],
+			contact: {
+				title: 'Hubungi Kami',
+				desc: 'Informasikan kepada kami kendala yang Anda alami.',
+				url: '/bantuan/hubungi-kami',
+				button: 'KONTAK KAMI'
+			}
 		}
 	}
 }
@@ -247,32 +246,6 @@ export default {
 
 	.bzg_c {
 		margin-bottom: 80px;
-	}
-}
-
-.contact-us {
-	// background-color: #f2f2f2;
-	padding: 40px 0;
-
-	.bg-full {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		background-color: #f2f2f2;
-		z-index: -2;
-		top: 0;
-	}
-
-	p {
-		font-size: 28px;
-	}
-
-	img {
-		position: absolute;
-		right: 0;
-		top: 0;
-		height: 100%;
-		z-index: -1;
 	}
 }
 </style>
