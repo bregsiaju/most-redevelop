@@ -27,7 +27,7 @@
 				<h1 class="title mb-48">
 					Bergabung via online yang<br />pastinya <u>bebas ribet!</u>
 					<nuxt-link to="">
-						<i class="icon-arrow-right"></i>
+						<icons-arrow-circle />
 					</nuxt-link>
 				</h1>
 				<RegisterSteps :data="onlineSteps" />
@@ -138,15 +138,6 @@ section {
 
 .bg-grey {
 	background-color: #f2f2f2;
-}
-
-i.icon-arrow-right {
-	font-size: 16px;
-	border-radius: 50%;
-	background-color: $primary;
-	color: white;
-	padding: 8px;
-	margin-right: 16px;
 }
 
 section.help {
