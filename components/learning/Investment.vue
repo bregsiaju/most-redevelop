@@ -8,24 +8,10 @@
 				</ul>
 				<p class="f-24">Belajar <strong>Investasi</strong></p>
 				<ul class="list-nostyle nav-category">
-					<li>
-						<nuxt-link to="/belajar-investasi/mulai-investasi">
-							Mulai Investasi
+					<li v-for="(item, i) in nav" :key="i">
+						<nuxt-link :to="`/belajar-investasi${item.url}`">
+							{{ item.text }}
 						</nuxt-link>
-					</li>
-					<li>
-						<nuxt-link to="/belajar-investasi/saham">Saham</nuxt-link>
-					</li>
-					<li>
-						<nuxt-link to="/belajar-investasi/reksa-dana">Reksa Dana</nuxt-link>
-					</li>
-					<li>
-						<nuxt-link to="/belajar-investasi/obligasi">Obligasi</nuxt-link>
-					</li>
-					<li>
-						<nuxt-link to="/belajar-investasi/fasilitas-margin"
-							>Fasilitas Margin</nuxt-link
-						>
 					</li>
 				</ul>
 				<button class="btn--ghost-primary mb-20">
@@ -142,7 +128,38 @@
 </template>
 
 <script>
-export default {}
+export default {
+	data() {
+		return {
+			nav: [
+				{
+					text: 'Mulai Investasi',
+					url: '/mulai-investasi'
+				},
+				{
+					text: 'Saham',
+					url: '/saham'
+				},
+				{
+					text: 'Reksa Dana',
+					url: '/reksa-dana'
+				},
+				{
+					text: 'Syariah',
+					url: '/syariah'
+				},
+				{
+					text: 'Obligasi',
+					url: '/obligasi'
+				},
+				{
+					text: 'Fasilitas Margin',
+					url: '/fasilitas-margin'
+				}
+			]
+		}
+	}
+}
 </script>
 
 <style lang="scss" scoped>

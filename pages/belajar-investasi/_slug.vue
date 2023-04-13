@@ -1,15 +1,15 @@
 <template>
 	<main class="site-main">
-		<h1>{{ slug }}</h1>
+		<learning-investment></learning-investment>
 	</main>
 </template>
 
 <script>
 export default {
-	// eslint-disable-next-line require-await
-	async asyncData({ params }) {
-		const slug = params.slug // When calling /abc the slug will be "abc"
-		return { slug }
+	data() {
+		return {}
 	}
 }
 </script>
+
+<style lang="scss" scoped></style>
