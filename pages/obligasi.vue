@@ -6,6 +6,9 @@
 			</div>
 		</section>
 		<section>
+			<Offer :content="offers" />
+		</section>
+		<section>
 			<Promo :content="promos" />
 		</section>
 		<LastSection :data="footer" />
@@ -14,12 +17,14 @@
 
 <script>
 import PageHeader from '~/components/product/PageHeader.vue'
+import Offer from '~/components/product/Offer.vue'
 import Promo from '~/components/product/Promo.vue'
 import LastSection from '~/components/LastSection.vue'
 
 export default {
 	components: {
 		PageHeader,
+		Offer,
 		Promo,
 		LastSection
 	},
@@ -32,6 +37,26 @@ export default {
 				url: '/belajar-investasi/obligasi',
 				image: 'produk-obligasi.png'
 			},
+			offers: [
+				{
+					text1: 'Layanan transaksi yang fleksibel.',
+					text2:
+						'Lakukan transaksi secara mandiri atau dibantu broker terpercaya.'
+				},
+				{
+					text1: 'Layanan pembiayaan dengan harga kompetitif.',
+					text2: 'Tersedia layanan pembiayaan dengan harga bersaing.'
+				},
+				{
+					text1: 'Akses lengkap via satu aplikasi.',
+					text2: 'Akses berbagai kemudahan hanya dengan satu aplikasi. '
+				},
+				{
+					text1: 'Training investasi gratis.',
+					text2:
+						'Dapatkan training gratis untuk memahami segala hal tentang investasi.'
+				}
+			],
 			promos: [
 				{
 					image: 'pot.jpg',

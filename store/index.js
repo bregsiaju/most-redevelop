@@ -65,7 +65,7 @@ export const state = () => ({
 				},
 				{
 					title: 'Istilah Investasi',
-					url: '/istilah-investasi'
+					url: '/istilah-investasi/A'
 				}
 			]
 		},

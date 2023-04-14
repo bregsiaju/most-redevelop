@@ -7,7 +7,7 @@
 		>
 			<div class="container">
 				<span>Cari arti istilah yang belum Anda pahami di</span>
-				<nuxt-link to="/istilah-investasi" class="text-primary"
+				<nuxt-link to="/istilah-investasi/A" class="text-primary"
 					>Kamus Investasi</nuxt-link
 				>
 			</div>

@@ -19,7 +19,7 @@
 			</div>
 			<p class="kamus">
 				Buka
-				<nuxt-link to="/istilah-investasi">Kamus Investasi</nuxt-link> untuk
+				<nuxt-link to="/istilah-investasi/A">Kamus Investasi</nuxt-link> untuk
 				memahami istilah-istilah yang masih asing bagi Anda.
 			</p>
 		</div>
