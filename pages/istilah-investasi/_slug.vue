@@ -32,8 +32,10 @@
 
 			<!-- text shadow -->
 			<div class="title-shadow-wrapper relative">
-				<strong class="text-shadow">A</strong>
-				<p><strong>A</strong> (11 istilah)</p>
+				<strong class="text-shadow">{{ activePage }}</strong>
+				<p>
+					<strong>{{ activePage }}</strong> (11 istilah)
+				</p>
 			</div>
 			<!-- end text shadow -->
 
@@ -119,6 +121,9 @@ export default {
 				result.push(String.fromCharCode(i))
 			}
 			return result
+		},
+		activePage() {
+			return this.$route.params.slug
 		}
 	},
 	mounted() {
