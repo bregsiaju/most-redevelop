@@ -51,7 +51,7 @@ export default {
 	top: -107px;
 	right: 0px;
 	opacity: 0.3;
-	font-size: 164px;
+	font-size: 150px;
 	color: #e1e1e1;
 	line-height: 1;
 	z-index: -1;

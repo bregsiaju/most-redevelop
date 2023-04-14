@@ -8,6 +8,9 @@
 		<section>
 			<Service :content="services" />
 		</section>
+		<section>
+			<Promo :content="promos" />
+		</section>
 		<LastSection :data="footer" />
 	</main>
 </template>
@@ -15,12 +18,14 @@
 <script>
 import PageHeader from '~/components/product/PageHeader.vue'
 import Service from '~/components/product/Service.vue'
+import Promo from '~/components/product/Promo.vue'
 import LastSection from '~/components/LastSection.vue'
 
 export default {
 	components: {
 		PageHeader,
 		Service,
+		Promo,
 		LastSection
 	},
 	data() {
@@ -52,6 +57,18 @@ export default {
 					text1: 'Proses pembukaan rekening mudah.',
 					text2:
 						'Berkat MOST DigiSign, pembukaan rekening efek dan rekening dana jadi lebih cepat menggunakan teknologi digital signature.'
+				}
+			],
+			promos: [
+				{
+					image: 'walking.jpeg',
+					title: 'Promo Cashback Reksa Dana Syariah',
+					desc: 'Dapatkan saldo RDN kembali (cashback) Rp 50.000,- untuk pembelian produk Reksa Dana Syariah di MOST!'
+				},
+				{
+					image: 'scissors.jpeg',
+					title: 'Promo Cashback Pembelian Saham',
+					desc: 'Dapatkan cashback sebesar Rp50.000,- untuk pembelian Saham Big Cap di website MOST!'
 				}
 			],
 			footer: {

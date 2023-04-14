@@ -8,6 +8,9 @@
 		<section>
 			<Service :content="services" />
 		</section>
+		<section>
+			<Promo :content="promos" />
+		</section>
 		<LastSection :data="footer" />
 	</main>
 </template>
@@ -15,12 +18,14 @@
 <script>
 import PageHeader from '~/components/product/PageHeader.vue'
 import Service from '~/components/product/Service.vue'
+import Promo from '~/components/product/Promo.vue'
 import LastSection from '~/components/LastSection.vue'
 
 export default {
 	components: {
 		PageHeader,
 		Service,
+		Promo,
 		LastSection
 	},
 	data() {
@@ -52,6 +57,18 @@ export default {
 					text1: 'Terhindar dari suspend buy.',
 					text2:
 						'Dengan fasilitas marjin, Anda tetap dapat melakukan pembelian saham dengan limit yang tersedia selama collateral ratio tercukupi.'
+				}
+			],
+			promos: [
+				{
+					image: 'walking.jpeg',
+					title: 'Penawaran Fasilitas Marjin',
+					desc: 'Khusus bagi Anda para nasabah MOST terpilih, nikmati fasilitas marjin dan dapatkan berbagai keuntungan!'
+				},
+				{
+					image: 'book.jpg',
+					title: 'Promo Cashback Pembelian Saham',
+					desc: 'Dapatkan cashback sebesar Rp50.000,- untuk pembelian Saham Big Cap di website MOST!'
 				}
 			],
 			footer: {

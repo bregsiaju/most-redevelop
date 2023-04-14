@@ -8,6 +8,9 @@
 		<section>
 			<Service :content="services" />
 		</section>
+		<section>
+			<Promo :content="promos" />
+		</section>
 		<LastSection :data="footer" />
 	</main>
 </template>
@@ -15,12 +18,14 @@
 <script>
 import PageHeader from '~/components/product/PageHeader.vue'
 import Service from '~/components/product/Service.vue'
+import Promo from '~/components/product/Promo.vue'
 import LastSection from '~/components/LastSection.vue'
 
 export default {
 	components: {
 		PageHeader,
 		Service,
+		Promo,
 		LastSection
 	},
 	data() {
@@ -50,6 +55,18 @@ export default {
 					text1: 'Training investasi gratis.',
 					text2:
 						'Dapatkan training gratis untuk memahami segala hal tentang investasi.'
+				}
+			],
+			promos: [
+				{
+					image: 'book.jpg',
+					title: 'Promo Cashback Pembelian Saham',
+					desc: 'Dapatkan cashback sebesar Rp50.000,- untuk pembelian Saham Big Cap di website MOST!'
+				},
+				{
+					image: 'scissors.jpeg',
+					title: 'Promo Cashback Pembelian Saham',
+					desc: 'Dapatkan cashback sebesar Rp50.000,- untuk pembelian Saham Big Cap di website MOST!'
 				}
 			],
 			footer: {
