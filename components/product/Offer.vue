@@ -21,19 +21,22 @@
 				</div>
 			</div>
 			<div class="bzg">
-				<div v-for="item in 9" :key="item" class="bzg_c content" data-col="l4">
+				<div
+					v-for="item in content"
+					:key="item.id"
+					class="bzg_c content"
+					data-col="l4"
+				>
 					<div class="card-content-wrapper">
 						<span class="text-green">16 - 20 Des 2020</span>
-						<h5 class="mb-10">
-							Obligasi Berkelanjutan II Bank Mandiri Tahap I
-						</h5>
+						<h5 class="mb-10">{{ item.name }}</h5>
 						<div class="card-footer relative">
 							<div class="bzg">
 								<div class="bzg_c" data-col="s3">
 									<span class="text-grey">Tipe</span>
 								</div>
 								<div class="bzg_c" data-col="s7">
-									<span>Korporat</span>
+									<span>{{ item.type }}</span>
 								</div>
 							</div>
 							<div class="bzg">
@@ -41,10 +44,10 @@
 									<span class="text-grey">Penerbit</span>
 								</div>
 								<div class="bzg_c" data-col="s7">
-									<span>Bank Mandiri</span>
+									<span>{{ item.publisher }}</span>
 								</div>
 							</div>
-							<nuxt-link to="">
+							<nuxt-link :to="toDetailContentUrl(item.name)">
 								<ArrowCircle />
 							</nuxt-link>
 						</div>
@@ -96,6 +99,13 @@ export default {
 		content: {
 			type: Array,
 			required: true
+		}
+	},
+	methods: {
+		toDetailContentUrl(name) {
+			const toUrl = name.toLowerCase().replace(/ /g, '-')
+			const url = `${this.$route.path}/${toUrl}`
+			return url
 		}
 	}
 }

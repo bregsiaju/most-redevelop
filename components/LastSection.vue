@@ -64,7 +64,7 @@ p {
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	width: 30%;
+	height: 100%;
 	z-index: -1;
 }
 
@@ -80,11 +80,15 @@ p {
 	p {
 		font-size: 28px;
 	}
+
+	.bg-image {
+		height: 70%;
+	}
 }
 
 @media #{$large} {
 	.bg-image {
-		width: 20%;
+		height: 90%;
 	}
 }
 </style>

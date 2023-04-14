@@ -39,22 +39,58 @@ export default {
 			},
 			offers: [
 				{
-					text1: 'Layanan transaksi yang fleksibel.',
-					text2:
-						'Lakukan transaksi secara mandiri atau dibantu broker terpercaya.'
+					id: 1,
+					name: 'Obligasi Berkelanjutan II Bank Mandiri Tahap I',
+					type: 'Korporat',
+					publisher: 'Bank Mandiri'
 				},
 				{
-					text1: 'Layanan pembiayaan dengan harga kompetitif.',
-					text2: 'Tersedia layanan pembiayaan dengan harga bersaing.'
+					id: 2,
+					name: 'Obligasi SBN SERI ORI016',
+					type: 'Pemerintah',
+					publisher: 'Pemerintah RI'
 				},
 				{
-					text1: 'Akses lengkap via satu aplikasi.',
-					text2: 'Akses berbagai kemudahan hanya dengan satu aplikasi. '
+					id: 3,
+					name: 'Obligasi Berkelanjutan II Bank Mandiri Tahap I',
+					type: 'Korporat',
+					publisher: 'Bank Mandiri'
 				},
 				{
-					text1: 'Training investasi gratis.',
-					text2:
-						'Dapatkan training gratis untuk memahami segala hal tentang investasi.'
+					id: 4,
+					name: 'Obligasi SBN SERI ORI016',
+					type: 'Pemerintah',
+					publisher: 'Pemerintah RI'
+				},
+				{
+					id: 5,
+					name: 'Obligasi Berkelanjutan II Bank Mandiri Tahap I',
+					type: 'Korporat',
+					publisher: 'Bank Mandiri'
+				},
+				{
+					id: 6,
+					name: 'Obligasi Berkelanjutan II Bank Mandiri Tahap I',
+					type: 'Korporat',
+					publisher: 'Bank Mandiri'
+				},
+				{
+					id: 7,
+					name: 'Obligasi Berkelanjutan II Bank Mandiri Tahap I',
+					type: 'Korporat',
+					publisher: 'Bank Mandiri'
+				},
+				{
+					id: 8,
+					name: 'Obligasi Berkelanjutan II Bank Mandiri Tahap I',
+					type: 'Korporat',
+					publisher: 'Bank Mandiri'
+				},
+				{
+					id: 9,
+					name: 'Obligasi SBN SERI ORI016',
+					type: 'Pemerintah',
+					publisher: 'Pemerintah RI'
 				}
 			],
 			promos: [
