@@ -4,12 +4,12 @@
 		<section id="header">
 			<div class="container">
 				<div class="bzg v-center">
-					<div class="bzg_c" data-col="m5, l4">
+					<div class="bzg_c" data-col="m6, l4">
 						<div class="responsive-media r-square">
 							<img src="/assets/img/mandiri-tower.jpg" alt="mandiri tower" />
 						</div>
 					</div>
-					<div class="bzg_c" data-col="m7, l8">
+					<div class="bzg_c second" data-col="m6, l8">
 						<h1 class="title text-reg">Tentang <b>Mandiri Sekuritas</b></h1>
 						<p class="f-24 text-grey">
 							Kami adalah salah satu Bank Investasi terdepan dan Broker Teraktif
@@ -68,30 +68,51 @@
 							bisa melakukan transaksi dengan aman dan nyaman.
 						</p>
 						<div class="bzg bzg--no-gutter f-gap-20 pt-24">
-							<div class="bzg_c" data-col="s4">
+							<div class="bzg_c" data-col="m5, l4">
 								<nuxt-link to="" class="btn--primary btn--block"
 									>PLATFORM KAMI</nuxt-link
 								>
 							</div>
-							<div class="bzg_c" data-col="s4">
+							<div class="bzg_c" data-col="m5, l4">
 								<nuxt-link to="" class="btn--ghost-primary btn--block"
 									>BANTUAN</nuxt-link
 								>
 							</div>
 						</div>
 					</div>
-					<div class="bzg_c" data-col="m6, l7">
-						<img src="/assets/img/platform-most.png" class="pull-right" />
+					<div class="bzg_c second" data-col="m6, l7">
+						<img src="/assets/img/platform-most.png" class="image-pull-right" />
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- branch office (tab) -->
+		<section id="branch">
+			<div class="container">
+				<h1 class="title text-reg text-center">
+					Temukan <b>cabang kami</b> di lokasi terdekat Anda
+				</h1>
+				<TabOfficeBranch />
+			</div>
+		</section>
 	</main>
 </template>
 
 <script>
-export default {}
+import TabOfficeBranch from '~/components/tabs/TabOfficeBranch.vue'
+
+export default {
+	components: {
+		TabOfficeBranch
+	},
+	head() {
+		return {
+			...this.$SEOMeta({
+				metaTitle: 'Tentang Mandiri Sekuritas'
+			})
+		}
+	}
+}
 </script>
 
 <style lang="scss" scoped>
@@ -104,15 +125,19 @@ h1 {
 }
 
 #header {
-	.bzg_c:nth-child(2) {
-		padding-left: 80px;
+	@media #{$large} {
+		.bzg_c:nth-child(2) {
+			padding-left: 80px;
+		}
 	}
 }
 
 #commitment {
 	.title {
-		width: 70%;
-		margin: 45px auto;
+		@media #{$large} {
+			width: 70%;
+			margin: 45px auto;
+		}
 	}
 
 	.bzg_c {
@@ -121,7 +146,7 @@ h1 {
 
 	span {
 		position: absolute;
-		font-size: 200px;
+		font-size: 12em;
 		font-weight: bold;
 		left: 0px;
 		top: 0px;
@@ -138,8 +163,48 @@ h1 {
 		line-height: 1.3;
 	}
 
-	.pull-right {
+	.image-pull-right {
 		transform: translateX(110px);
+	}
+}
+
+#branch {
+	h1 {
+		margin-bottom: 56px;
+	}
+}
+
+@media #{$md} {
+	.title {
+		font-size: 2.15em;
+	}
+
+	.f-24 {
+		font-size: 1.2em !important;
+	}
+
+	#platform .image-pull-right {
+		transform: translateX(30px);
+	}
+
+	.bzg_c.second {
+		padding-top: 20px;
+	}
+
+	#commitment {
+		.f-24 {
+			font-size: 1.4em !important;
+		}
+
+		.bzg_c {
+			padding: 65px 0 27px 54px;
+		}
+	}
+}
+
+@media #{$sm} {
+	#platform .image-pull-right {
+		transform: translateX(0px);
 	}
 }
 </style>

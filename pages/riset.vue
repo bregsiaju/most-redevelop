@@ -48,7 +48,7 @@
 					class="bzg_c"
 					data-col="m6, l4"
 				>
-					<RisetCard :content="result" />
+					<cardsRisetCard :content="result" />
 				</div>
 			</div>
 			<!-- end result -->
