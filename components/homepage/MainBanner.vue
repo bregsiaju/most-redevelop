@@ -5,23 +5,25 @@
 	>
 		<div class="container">
 			<div class="banner-content">
-				<div class="title">
-					<strong>MOST:</strong> Aplikasi investasi terpercaya<br />untuk hidup
-					lebih mapan.
-				</div>
-				<div class="desc">
-					Jual beli saham, reksa dana, dan obligasi dalam<br />satu platform
-					terintegrasi.
-				</div>
-				<div class="cta flex f-gap-20 v-center flex--wrap">
-					<nuxt-link to="">
-						<button class="btn--primary">DAFTAR SEKARANG</button>
-					</nuxt-link>
-					<nuxt-link to="">
-						<i class="icon-arrow-down"></i>
-						UNDUH SEKARANG
-					</nuxt-link>
-				</div>
+				<slot name="texting">
+					<div class="title">
+						<strong>MOST:</strong> Aplikasi investasi terpercaya<br />untuk
+						hidup lebih mapan.
+					</div>
+					<div class="desc">
+						Jual beli saham, reksa dana, dan obligasi dalam<br />satu platform
+						terintegrasi.
+					</div>
+					<div class="cta flex f-gap-20 v-center flex--wrap">
+						<nuxt-link to="">
+							<button class="btn--primary">DAFTAR SEKARANG</button>
+						</nuxt-link>
+						<nuxt-link to="">
+							<i class="icon-arrow-down"></i>
+							UNDUH SEKARANG
+						</nuxt-link>
+					</div>
+				</slot>
 			</div>
 		</div>
 	</div>
