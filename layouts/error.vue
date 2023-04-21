@@ -1,15 +1,20 @@
 <template>
-	<div class="error sticky-footer-container-item --pushed">
-		<div class="container text-center">
-			<div v-if="statusCode === 404" class="mb-24">
-				<img v-lazy-load data-src="~assets/img/404.png" alt="" />
-				<p class="h2">Maaf, halaman yang sedang Anda cari tidak tersedia.</p>
+	<div id="app" class="sticky-footer-container">
+		<div class="error sticky-footer-container-item --pushed">
+			<div class="container text-center">
+				<div v-if="statusCode === 404" class="mb-24">
+					<img v-lazy-load data-src="~assets/img/404.png" alt="" />
+					<p class="h2">Maaf, halaman yang sedang Anda cari tidak tersedia.</p>
+				</div>
+				<div v-else class="mb-24">
+					<img v-lazy-load data-src="~assets/img/500.png" alt="" />
+					<p class="h2">Maaf, saat ini sedang terjadi kesalahan basis data.</p>
+				</div>
+				<a class="btn--primary" href="/">KEMBALI KE HALAMAN AWAL</a>
 			</div>
-			<div v-else class="mb-24">
-				<img v-lazy-load data-src="~assets/img/500.png" alt="" />
-				<p class="h2">Maaf, saat ini sedang terjadi kesalahan basis data.</p>
-			</div>
-			<a class="btn--primary" href="/">KEMBALI KE HALAMAN AWAL</a>
+		</div>
+		<div class="sticky-footer-container-item">
+			<ErrorFooter />
 		</div>
 	</div>
 </template>
