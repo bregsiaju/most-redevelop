@@ -18,7 +18,7 @@
 		</section>
 		<section id="fitur">
 			<div class="container">
-				<div class="heading">
+				<div class="heading pb-24">
 					<h1 class="title text-reg">
 						Lihat <b>perbandingan fitur</b> platform MOST di sini.
 					</h1>
@@ -27,6 +27,8 @@
 						Anda.
 					</p>
 				</div>
+				<!-- tabel fitur -->
+				<TableFeature :feature-list="features" />
 			</div>
 		</section>
 		<LastSection :data="cto" />
@@ -36,12 +38,14 @@
 <script>
 import FeatureBanner from '~/components/feature/FeatureBanner.vue'
 import FeatureBenefit from '~/components/feature/FeatureBenefit.vue'
+import TableFeature from '~/components/feature/TableFeature.vue'
 import LastSection from '~/components/LastSection.vue'
 
 export default {
 	components: {
 		FeatureBanner,
 		FeatureBenefit,
+		TableFeature,
 		LastSection
 	},
 	data() {
@@ -110,6 +114,83 @@ export default {
 					app: true,
 					mobile: true,
 					remarks: 'None'
+				},
+				{
+					name: 'Trade Mutual Fundck',
+					web: true,
+					app: false,
+					mobile: true,
+					remarks: 'None'
+				},
+				{
+					name: 'Trade Bonds',
+					web: true,
+					app: false,
+					mobile: false,
+					remarks: 'None'
+				},
+				{
+					name: 'Watchlist',
+					web: true,
+					app: true,
+					mobile: true,
+					remarks: 'None'
+				},
+				{
+					name: 'Chart',
+					web: true,
+					app: true,
+					mobile: true,
+					remarks: 'MOST Mobile bisa tarik garis support resisten & fibo'
+				},
+				{
+					name: 'Trend line drawing',
+					web: true,
+					app: true,
+					mobile: false,
+					remarks: 'None'
+				},
+				{
+					name: 'Auto Order',
+					web: false,
+					app: true,
+					mobile: true,
+					remarks: 'None'
+				},
+				{
+					name: 'News',
+					web: false,
+					app: true,
+					mobile: true,
+					remarks: 'Ipot memiliki ipotnews yang lebih lengkap'
+				},
+				{
+					name: 'Riset',
+					web: true,
+					app: true,
+					mobile: true,
+					remarks: 'Website lebih lengkap'
+				},
+				{
+					name: 'Running Trade',
+					web: true,
+					app: true,
+					mobile: true,
+					remarks: 'Realtime'
+				},
+				{
+					name: 'Corporate Action',
+					web: true,
+					app: true,
+					mobile: true,
+					remarks: 'Di RTI atau IDX'
+				},
+				{
+					name: 'IPO Book Building',
+					web: true,
+					app: false,
+					mobile: false,
+					remarks: 'Perusahaan BUMN dan Market Cap yang besar'
 				}
 			],
 			cto: {
@@ -140,10 +221,8 @@ section#fitur {
 		p {
 			font-size: 1.5em;
 		}
-	}
 
-	@media #{$large} {
-		.heading {
+		@media #{$large} {
 			width: 40%;
 		}
 	}
