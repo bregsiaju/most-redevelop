@@ -61,7 +61,26 @@
 						</li>
 					</ul>
 					<div class="search relative">
-						<i class="icon-search" @click="searchOn = true"></i>
+						<i
+							class="icon-search toggle"
+							tabindex="0"
+							@focus="handleSearchFocus"
+						></i>
+						<div v-if="searchOn" class="form-search">
+							<form>
+								<div class="form-icon-wrapper">
+									<i class="icon-search form-icon--left"></i>
+									<input
+										type="text"
+										placeholder="Cari"
+										name="search"
+										class="form-input"
+										@focus="handleSearchFocus"
+										@focusout="handleSearchFocusOut"
+									/>
+								</div>
+							</form>
+						</div>
 					</div>
 					<nuxt-link to="/login">
 						<button class="btn--primary">MULAI INVESTASI</button>
@@ -75,7 +94,26 @@
 				</div>
 				<div v-if="isCollapse" class="menu-responsive flex v-center">
 					<div class="search relative">
-						<i class="icon-search" @click="searchOn = true"></i>
+						<i
+							class="icon-search toggle"
+							tabindex="0"
+							@focus="handleSearchFocus"
+						></i>
+						<div v-if="searchOn" class="form-search">
+							<form>
+								<div class="form-icon-wrapper">
+									<i class="icon-search form-icon--left"></i>
+									<input
+										type="text"
+										placeholder="Cari"
+										name="search"
+										class="form-input"
+										@focus="handleSearchFocus"
+										@focusout="handleSearchFocusOut"
+									/>
+								</div>
+							</form>
+						</div>
 					</div>
 					<div class="menu" @click="$store.commit('sidebar/toggle')">
 						<i
@@ -138,6 +176,12 @@ export default {
 			} else {
 				this.dropdownItem[id] = false
 			}
+		},
+		handleSearchFocus() {
+			this.searchOn = true
+		},
+		handleSearchFocusOut() {
+			this.searchOn = false
 		}
 	}
 }
@@ -217,13 +261,36 @@ export default {
 			}
 		}
 
-		.icon-search {
+		.icon-search.toggle {
 			padding: 9px 24px 9px 12px;
 		}
 	}
 
 	.site-logo {
 		margin-left: -20px;
+	}
+}
+
+.search {
+	&:hover {
+		cursor: pointer;
+	}
+
+	.form-search {
+		position: absolute;
+		top: -4px;
+		right: 12px;
+
+		.form-icon-wrapper {
+			/deep/ .form-input {
+				width: 420px;
+				background-color: #f2f2f2;
+
+				@media #{$sm} {
+					width: 250px;
+				}
+			}
+		}
 	}
 }
 
