@@ -67,7 +67,7 @@
 							@focus="handleSearchFocus"
 						></i>
 						<div v-if="searchOn" class="form-search">
-							<form>
+							<form action="/pencarian">
 								<div class="form-icon-wrapper">
 									<i class="icon-search form-icon--left"></i>
 									<input
@@ -100,7 +100,7 @@
 							@focus="handleSearchFocus"
 						></i>
 						<div v-if="searchOn" class="form-search">
-							<form>
+							<form action="/pencarian">
 								<div class="form-icon-wrapper">
 									<i class="icon-search form-icon--left"></i>
 									<input
