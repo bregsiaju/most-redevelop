@@ -19,9 +19,9 @@
 			<div class="container">
 				<div class="bzg v-center relative">
 					<div class="bzg_c title mb-56" data-col="m6">
-						<p class="mb-20">
+						<h1 class="mb-20">
 							Pahami segala hal tentang <strong>investasi.</strong>
-						</p>
+						</h1>
 						<span>Pilih materi-materi berikut ini.</span>
 					</div>
 					<div class="bzg_c" data-col="m6">
@@ -94,15 +94,15 @@ export default {
 .title {
 	margin-top: 24px;
 
-	p {
-		font-size: 40px;
+	h1 {
+		// font-size: 40px;
 		line-height: 1.3;
 		color: $dark-grey;
 	}
 
 	span {
 		color: $grey;
-		font-size: 24px;
+		font-size: 1.5em;
 		border-bottom: 3px solid $primary-blue;
 		padding-bottom: 12px;
 	}
@@ -140,6 +140,10 @@ export default {
 
 	.card-content {
 		padding: 42px;
+
+		@media #{$md} {
+			padding: 42px 0;
+		}
 
 		h2 {
 			font-size: 30px;

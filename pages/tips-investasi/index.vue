@@ -3,7 +3,7 @@
 		<div class="container">
 			<Sticky>
 				<template #sticky-content>
-					<ul class="breadcrumb">
+					<ul class="breadcrumb mt-20">
 						<li><nuxt-link to="/belajar">Belajar</nuxt-link></li>
 						<li>Tips & Trik</li>
 					</ul>
@@ -131,6 +131,10 @@ export default {
 .filters {
 	padding-bottom: 100px;
 
+	@media #{$md} {
+		padding-bottom: 32px;
+	}
+
 	.bzg {
 		border-radius: 3px;
 		background-color: $primary-blue;
@@ -165,15 +169,19 @@ export default {
 		& > .card {
 			margin-bottom: 100px;
 		}
+
+		@media #{$sm} {
+			padding-left: 0px;
+
+			& > .card {
+				margin-bottom: 56px;
+			}
+		}
 	}
 
 	@media #{$medium} {
 		.bzg_c:nth-child(odd) {
 			transform: translateY(75px);
-		}
-
-		.bzg_c > .card {
-			margin-bottom: 186px;
 		}
 	}
 }

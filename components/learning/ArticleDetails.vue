@@ -117,6 +117,12 @@ export default {
 .article-details {
 	padding-top: 35px;
 
+	@media #{$md} {
+		.breadcrumb {
+			font-size: 14px;
+		}
+	}
+
 	.title {
 		font-size: 45px;
 		margin-bottom: 20px;
@@ -125,6 +131,10 @@ export default {
 
 		@media #{$large} {
 			width: 70%;
+		}
+
+		@media #{$md} {
+			font-size: 28px !important;
 		}
 	}
 
@@ -143,17 +153,29 @@ export default {
 			color: $primary-blue;
 			margin-left: 12px;
 		}
+
+		@media #{$md} {
+			font-size: 14px;
+		}
 	}
 
 	.text-content {
 		font-size: 24px;
 		margin: 44px 0 56px;
-		padding: 0 15%;
+
+		@media #{$sm} {
+			font-size: 16px;
+			margin: 28px 0;
+		}
 	}
 
 	.recomendations {
 		.title {
 			margin: 64px 0;
+
+			@media #{$md} {
+				margin: 34px 0;
+			}
 		}
 	}
 }

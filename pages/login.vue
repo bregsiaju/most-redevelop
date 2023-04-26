@@ -120,8 +120,8 @@ export default {
 }
 
 .title {
-	font-size: 45px;
-	margin-bottom: 48px;
+	font-size: 40px;
+	margin-bottom: 40px;
 	line-height: 1;
 	color: #3b3b3b;
 }
@@ -153,6 +153,7 @@ a {
 	border: none;
 	border-bottom: 1px solid #ccc;
 	border-radius: 0;
+	font-size: 1.5em;
 }
 
 .bg-img {

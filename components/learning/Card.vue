@@ -8,14 +8,14 @@
 			<span v-if="cardType === 'video'" class="duration">
 				{{ content.duration ? content.duration : '15:00' }}
 			</span>
-			<span v-if="cardType === 'article'" class="duration">
+			<span v-else-if="cardType === 'article'" class="duration">
 				{{ content.duration ? content.duration : '10' }} min read
 			</span>
 			<div v-if="cardType === 'event'" class="level">
 				<span>Basic 2</span>
 				<span>Nasabah</span>
 			</div>
-			<div v-if="cardType === 'video'" class="play-button">
+			<div v-else-if="cardType === 'video'" class="play-button">
 				<i class="bzi-play"></i>
 			</div>
 		</nuxt-link>
@@ -23,7 +23,7 @@
 			<h4 class="f-24 mb-16">{{ content.label }}</h4>
 			<p class="f-18 text-grey mb-0">{{ content.info }}</p>
 		</div>
-		<div v-if="cardType === 'event'" class="card--text -event bg-white">
+		<div v-else-if="cardType === 'event'" class="card--text -event bg-white">
 			<p class="f-18 text-grey mb-8">{{ content.date }}</p>
 			<nuxt-link :to="$route.path + (content.url ? content.url : '')">
 				<h4 class="f-24 mb-16">{{ content.title }}</h4>
@@ -67,6 +67,10 @@ export default {
 	margin-bottom: 70px;
 	border-bottom: 3px solid $primary-blue;
 
+	@media #{$sm} {
+		margin-bottom: 36px;
+	}
+
 	.card-img {
 		height: 247px;
 		display: flex;
@@ -81,6 +85,10 @@ export default {
 
 	.card--text {
 		padding: 30px 20px;
+
+		@media #{$sm} {
+			padding: 24px 16px;
+		}
 
 		&.-event {
 			i {

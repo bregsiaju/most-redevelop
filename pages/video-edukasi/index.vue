@@ -3,7 +3,7 @@
 		<div class="container">
 			<Sticky>
 				<template #sticky-content>
-					<ul class="breadcrumb">
+					<ul class="breadcrumb mt-16">
 						<li><nuxt-link to="/belajar">Belajar</nuxt-link></li>
 						<li>Video Edukasi</li>
 					</ul>
@@ -115,6 +115,14 @@ export default {
 	line-height: 1;
 	color: $dark-grey;
 	margin-bottom: 30px;
+
+	@media #{$md} {
+		margin-bottom: 16px;
+	}
+
+	@media #{$sm} {
+		font-size: 30px;
+	}
 }
 
 .nav-category {
@@ -124,6 +132,10 @@ export default {
 		position: relative;
 		width: fit-content;
 		margin-bottom: 12px;
+
+		@media #{$md} {
+			font-size: 24px;
+		}
 
 		a.nuxt-link-active {
 			color: $dark-grey;
@@ -157,20 +169,28 @@ export default {
 		& > .card {
 			margin-bottom: 100px;
 		}
+
+		@media #{$sm} {
+			padding-left: 0px;
+
+			& > .card {
+				margin-bottom: 56px;
+			}
+		}
 	}
 
 	@media #{$medium} {
 		.bzg_c:nth-child(odd) {
 			transform: translateY(75px);
 		}
-
-		.bzg_c > .card {
-			margin-bottom: 186px;
-		}
 	}
 }
 .about {
 	margin-top: 148px;
+
+	@media #{$md} {
+		margin-top: 56px;
+	}
 
 	.bzg_c {
 		padding: 36px;
@@ -189,7 +209,11 @@ export default {
 	}
 
 	.desc {
-		font-size: 30px;
+		font-size: 25px;
+
+		@media #{$sm} {
+			font-size: 20px;
+		}
 	}
 }
 </style>

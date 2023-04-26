@@ -140,6 +140,10 @@ export default {
 	@media #{$large} {
 		width: 50%;
 	}
+
+	@media #{$sm} {
+		font-size: 24px;
+	}
 }
 
 .form-input-search {
@@ -189,6 +193,14 @@ export default {
 			background: #f1f7fc;
 		}
 	}
+
+	@media #{$sm} {
+		margin-top: 32px;
+
+		a {
+			flex-basis: 48px;
+		}
+	}
 }
 
 .title-shadow-wrapper {
@@ -232,11 +244,9 @@ export default {
 	min-height: 107.6px;
 	display: flex;
 	align-items: center;
-}
-</style>
 
-<style scoped>
-.accordion >>> .accordion__item {
-	width: 100%;
+	/deep/ .accordion__item {
+		width: 100%;
+	}
 }
 </style>

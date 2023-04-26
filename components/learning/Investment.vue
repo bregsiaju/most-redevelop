@@ -2,7 +2,7 @@
 	<div class="bzg v-start ml-0">
 		<div class="bzg_c pt-28 sticky sticky-nav" data-col="l2">
 			<slot name="sticky-nav">
-				<ul class="breadcrumb f-12">
+				<ul class="breadcrumb">
 					<li><nuxt-link to="/belajar">Belajar</nuxt-link></li>
 					<li>Belajar Investasi</li>
 				</ul>
@@ -14,10 +14,10 @@
 						</nuxt-link>
 					</li>
 				</ul>
-				<button class="btn--ghost-primary mb-20">
+				<button class="btn--ghost-primary mb-20 btn--block">
 					<nuxt-link to="">CARA DAFTAR</nuxt-link>
 				</button>
-				<button class="btn--primary mb-20">
+				<button class="btn--primary mb-20 btn--block">
 					<nuxt-link to="">MULAI INVESTASI</nuxt-link>
 				</button>
 			</slot>
@@ -60,7 +60,7 @@
 			</slot>
 		</div>
 		<div class="bzg_c content-section pt-28" data-col="l6">
-			<div class="pr-64 pl-36">
+			<div class="padding">
 				<slot name="main-content">
 					<p class="info">Mulai Investasi | 15 min read</p>
 					<p class="title">Investing 101: Investing Basics For Beginners</p>
@@ -170,6 +170,12 @@ export default {
 	}
 }
 
+.bzg_c {
+	@media #{$sm} {
+		padding: 0 16px 16px;
+	}
+}
+
 .nav-category {
 	padding-bottom: 14px;
 
@@ -203,6 +209,10 @@ export default {
 	border: 1px solid #e2e2e2;
 	border-top: none;
 
+	@media #{$md} {
+		height: auto;
+	}
+
 	.items-nav {
 		overflow: auto;
 		height: calc(100% - 107px);
@@ -210,6 +220,10 @@ export default {
 
 		li {
 			padding: 22px 38px 36px;
+
+			@media #{$md} {
+				padding: 22px 30px;
+			}
 
 			&.active {
 				background-color: white;
@@ -228,18 +242,31 @@ p.info {
 }
 
 .content-section {
+	.padding {
+		@media #{$large} {
+			padding: 0 64px 0 36px;
+		}
+	}
+
 	.title {
 		font-size: 45px;
 		line-height: 1.3;
-		font: $dark-grey;
 		margin-bottom: 25px;
 		font-weight: 600;
+
+		@media #{$sm} {
+			font-size: 30px;
+		}
 	}
 
 	.contents {
 		p {
 			font-size: 24px;
 			color: $grey;
+
+			@media #{$sm} {
+				font-size: 1.2em;
+			}
 		}
 	}
 
@@ -247,6 +274,11 @@ p.info {
 		margin-left: -25px;
 		padding: 28px 50px 70px;
 		color: white;
+
+		@media #{$md} {
+			margin-right: -16px;
+			padding: 28px 24px 36px;
+		}
 	}
 }
 </style>
