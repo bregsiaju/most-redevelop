@@ -26,7 +26,7 @@ const AxiosInstance = {
 /*
  ** Cache Busting
  */
-const version = process.env.npm_package_version.split('.').join('')
+const version = process.env.npm_package_version?.split('.').join('')
 
 export default {
 	target: 'server',
