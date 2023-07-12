@@ -30,6 +30,10 @@ const version = process.env.npm_package_version?.split('.').join('')
 
 export default {
 	target: 'static',
+	ssr: false,
+	generate: {
+		fallback: true
+	},
 	// Duplicate .env
 	env: listENVS,
 	// Global page headers (https://go.nuxtjs.dev/config-head)
@@ -171,9 +175,5 @@ export default {
 					? '[path][name].[ext]'
 					: `videos/[name].[contenthash:7]v${version}.[ext]`
 		}
-	},
-	server: {
-		port: 3000,
-		host: '0.0.0.0'
 	}
 }
